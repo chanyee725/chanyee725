@@ -1,32 +1,22 @@
-# 공부 기록
+### Hi, I'm an AI robotics researcher 🤖
 
-로봇 학습(VLA)을 공부하며 한 것과 배운 것을 남기는 블로그. Jekyll + [Beautiful Jekyll](https://beautifuljekyll.com) 6.0.1 (MIT, `LICENSE`). Vercel이 `main`에 push될 때마다 자동으로 빌드·배포한다 (`vercel.json`).
+I got hooked on Physical AI at work and now study **Vision-Language-Action (VLA)** models hands-on.
+After hours, I run experiments on a low-cost **SO-101** arm with **LeRobot**, asking why VLA policies work and where they break.
 
-## 글 쓰기
+- **Focus:** safe robot learning, and using LLMs to write robot policies
+- **Now:** studying the math behind VLA (linear algebra, backprop) and logging one demo every two weeks
+- **Stack:** Python, PyTorch, ROS 2, MuJoCo · Isaac Sim · Gazebo
 
-1. `templates/post.md`를 `_posts/YYYY-MM-DD-이름.md`로 복사한다.
-2. 머리말의 `title`, `excerpt`(목록에 보일 한 줄), `category`(글 목록 오른쪽 폴더, 글 하나에 하나), `tags`를 고친다. 썸네일은 `assets/img/`에 넣고 `thumbnail-img`에 경로를 적는다.
-3. 글 목록 오른쪽에서 분류(category) 폴더나 태그를 누르면 그 글만 걸러진다.
+This repository is also my portfolio site, where I keep that log.
 
-## 로컬 미리보기
+<details>
+<summary>About this repo</summary>
 
-```bash
-./scripts/serve.sh   # http://localhost:4000/  (끄기: Ctrl+C)
-```
+Jekyll + [Beautiful Jekyll](https://beautifuljekyll.com) 6.0.1 (MIT, see `LICENSE`), deployed on Vercel on every push to `main` (`vercel.json`).
 
-`_config.yml`을 고쳤을 때만 껐다가 다시 실행한다.
+- New post: copy `templates/post.md` to `_posts/YYYY-MM-DD-name.md` and fill in `title`, `excerpt`, `category`, `tags` (optional `thumbnail-img` from `assets/img/`).
+- Profile, education, career and awards: `_data/profile.yml`.
+- Local preview: `./scripts/serve.sh` → http://localhost:4000/ (restart after editing `_config.yml`).
+- Styles: `assets/css/custom.css`. When a domain is connected, set `url` in `_config.yml`.
 
-## 손댄 곳
-
-- 설정: `_config.yml` (메뉴, 색, 글꼴)
-- 스타일: `assets/css/custom.css` (Pretendard, 첫 화면, 목록, 이전·다음)
-- 첫 화면: `index.html`, 글 목록: `posts.html`
-- 테마 안의 영어 문구 일부를 한국어로 바꿨다 (`_layouts/`, `_includes/`)
-
-공개 사이트다. 회사 내부 정보, 사람 이름, 연락처는 쓰지 않는다.
-
-## 배포 (Vercel)
-
-- Vercel에서 이 레포를 Import → 설정은 `vercel.json`을 그대로 쓴다 (Jekyll, `bundle exec jekyll build`, 결과 `_site`).
-- `main`에 push하면 자동 배포, 다른 브랜치는 미리보기 주소가 생긴다.
-- 도메인을 연결하면 `_config.yml`의 `url`에 그 주소를 적는다.
+</details>
