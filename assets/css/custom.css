@@ -946,3 +946,240 @@ footer .fa-stack .fa-circle {
   margin-left: 1.4rem;
   width: calc(100% - 1.4rem);
 }
+
+/* 글 목록 쪽 번호 */
+.blog-pager {
+  display: flex;
+  justify-content: center;
+  gap: 0.3rem;
+  margin-top: 1.5rem;
+}
+.blog-pager:empty {
+  display: none;
+}
+.blog-pager button {
+  min-width: 2rem;
+  height: 2rem;
+  padding: 0 0.5rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+  color: #555;
+  cursor: pointer;
+}
+.blog-pager button:hover:not(:disabled) {
+  background: #f3f4f8;
+}
+.blog-pager button.is-current {
+  background: rgba(31, 52, 160, 0.9);
+  color: #fff;
+}
+.blog-pager button:disabled {
+  color: #ccc;
+  cursor: default;
+}
+.blog-pager button:focus-visible,
+.tag-more-toggle:focus-visible {
+  outline: 2px solid #1b2c8f;
+  outline-offset: 2px;
+}
+/* 태그 더 보기 */
+.tag-more-toggle {
+  margin-top: 0.6rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-size: 0.85rem;
+  color: #1b2c8f;
+  cursor: pointer;
+}
+.tag-more-toggle:hover {
+  text-decoration: underline;
+}
+
+/* ══ 글 목록 색감 정리 ══
+   포인트는 남색 하나. 폴더 아이콘만 은은한 호박색으로 '파일 폴더' 느낌을 준다. */
+:root {
+  --ink: #1b2c8f;
+  --ink-soft: #eef1fb;
+  --ink-line: rgba(27, 44, 143, 0.18);
+  --panel: #f8f9fd;
+  --panel-line: #eceef6;
+  --folder: #e0a63a;
+  --folder-open: #c98a16;
+}
+
+/* 제목 줄: 왼쪽 제목, 오른쪽 검색 */
+.blog-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  margin-bottom: 1rem;
+}
+.blog-top .blog-heading {
+  margin: 0;
+}
+.blog-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 0 1 18rem;
+  margin: 0;
+}
+.blog-search i {
+  position: absolute;
+  left: 0.8rem;
+  font-size: 0.8rem;
+  color: #9aa0b4;
+  pointer-events: none;
+}
+.blog-search input {
+  width: 100%;
+  height: 2.3rem;
+  padding: 0 2.2rem 0 2.1rem;
+  border: 1px solid var(--panel-line);
+  border-radius: 999px;
+  background: var(--panel);
+  font-size: 0.9rem;
+  color: #2a2a2a;
+  outline: none;
+  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+.blog-search input::placeholder {
+  color: #a3a8bb;
+}
+.blog-search input:focus {
+  border-color: var(--ink-line);
+  background: #fff;
+  box-shadow: 0 0 0 3px var(--ink-soft);
+}
+.blog-search input::-webkit-search-cancel-button {
+  display: none;
+}
+.blog-search kbd {
+  position: absolute;
+  right: 0.7rem;
+  padding: 0 0.35rem;
+  border: 1px solid var(--panel-line);
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: none;
+  font-size: 0.72rem;
+  line-height: 1.3;
+  color: #9aa0b4;
+}
+.blog-search input:focus + kbd {
+  display: none;
+}
+.blog-noresult {
+  padding: 2.5rem 0;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+  color: #888;
+}
+
+/* 사이드바: 옅은 남색 판 위에 분류와 태그 */
+.blog-side {
+  padding: 1.1rem 0.9rem 1.2rem;
+  border: 1px solid var(--panel-line);
+  border-radius: 14px;
+  background: var(--panel);
+}
+.blog-side h2 {
+  padding-left: 0.4rem;
+  font-size: 13px !important;
+  font-weight: 600;
+  color: #6b7290 !important;
+}
+
+/* 폴더 */
+.folders .filter {
+  color: #3a4060;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+.folders .filter i {
+  color: var(--folder);
+}
+.folders .filter:hover {
+  background: #fff;
+  color: var(--ink);
+}
+.folders .filter.is-active {
+  background: #fff;
+  color: var(--ink);
+  font-weight: 600;
+  box-shadow: inset 3px 0 0 var(--ink), 0 1px 2px rgba(27, 44, 143, 0.06);
+}
+.folders .filter.is-active i {
+  color: var(--folder-open);
+}
+.folders .filter span {
+  color: #a3a8bb;
+}
+.folders .filter.is-active span {
+  color: var(--ink);
+}
+.folders .filter.sub {
+  color: #5a6080;
+}
+.folders .filter.sub i {
+  color: #e9c27a;
+}
+.folder-toggle {
+  color: #a3a8bb;
+}
+.folder-toggle:hover {
+  background: #fff;
+  color: var(--ink);
+}
+
+/* 태그 */
+.blog-filter button {
+  border-color: var(--panel-line);
+  background: #fff;
+  color: #4a5170;
+  transition: background 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+}
+.blog-filter button:hover {
+  border-color: var(--ink-line);
+  background: var(--ink-soft);
+  color: var(--ink);
+}
+.blog-filter button:hover span {
+  color: var(--ink);
+}
+.blog-filter button.is-active {
+  border-color: transparent;
+  background: var(--ink);
+  color: #fff;
+}
+.tag-more-toggle {
+  padding-left: 0.4rem;
+  color: var(--ink);
+}
+
+/* 목록 줄에 마우스를 올리면 아주 옅게 */
+.blog-list li a {
+  transition: background 0.12s ease;
+}
+.blog-list li a:hover {
+  background: linear-gradient(90deg, var(--panel), transparent 85%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blog-search input,
+  .folders .filter,
+  .blog-filter button,
+  .blog-list li a {
+    transition: none;
+  }
+}
+@media (max-width: 640px) {
+  .blog-search {
+    flex-basis: 100%;
+  }
+}

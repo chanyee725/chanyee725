@@ -9,6 +9,10 @@ show-avatar: false
 
 {%- capture tag_names -%}{%- for t in site.tags -%}{{ t[0] }}{%- unless forloop.last -%},{%- endunless -%}{%- endfor -%}{%- endcapture -%}
 {%- assign tag_list = tag_names | split: ',' | sort -%}
+{%- comment -%} 태그를 글 수가 많은 순으로: "1000+개수#태그"를 문자열 정렬한 뒤 뒤집는다 {%- endcomment -%}
+{%- capture tag_rank -%}{%- for t in site.tags -%}{%- assign n = t[1].size | plus: 1000 -%}{{ n }}#{{ t[0] }}{%- unless forloop.last -%},{%- endunless -%}{%- endfor -%}{%- endcapture -%}
+{%- assign tag_rank = tag_rank | split: ',' | sort | reverse -%}
+{%- assign TAG_TOP = 12 -%}
 {%- capture cat_names -%}{%- for c in site.categories -%}{{ c[0] }}{%- unless forloop.last -%},{%- endunless -%}{%- endfor -%}{%- endcapture -%}
 {%- assign cat_found = cat_names | split: ',' -%}
 {%- comment -%} 분류 순서: 먼저 이 순서대로, 그 밖의 분류는 뒤에 {%- endcomment -%}
@@ -19,11 +23,18 @@ show-avatar: false
 
 <div class="blog">
   <div class="blog-main">
-    <h1 class="blog-heading">글 목록 <span id="blog-count">{{ site.posts.size }}</span></h1>
+    <div class="blog-top">
+      <h1 class="blog-heading">글 목록 <span id="blog-count">{{ site.posts.size }}</span></h1>
+      <label class="blog-search">
+        <i class="fas fa-search" aria-hidden="true"></i>
+        <input type="search" id="blog-search" placeholder="제목, 요약, 태그 검색" aria-label="글 검색" autocomplete="off">
+        <kbd aria-hidden="true">/</kbd>
+      </label>
+    </div>
 
     <ul class="blog-list">
       {% for post in site.posts %}
-      <li data-category="{{ post.category }}" data-series="{{ post.series }}" data-tags="|{{ post.tags | join: '|' }}|">
+      <li data-category="{{ post.category }}" data-series="{{ post.series }}" data-tags="|{{ post.tags | join: '|' }}|" data-search="{{ post.title | append: ' ' | append: post.excerpt | append: ' ' | append: post.series | append: ' ' | append: post.category | append: ' ' | append: post.tags | join: ' ' | strip_html | downcase | escape }}">
         <a href="{{ post.url | relative_url }}">
           <div class="blog-text">
             <div class="blog-head">
@@ -40,6 +51,8 @@ show-avatar: false
       </li>
       {% endfor %}
     </ul>
+    <p class="blog-noresult" hidden>맞는 글이 없습니다. 검색어를 바꾸거나 분류를 전체로 돌려 보세요.</p>
+    <nav class="blog-pager" aria-label="페이지"></nav>
     {% if site.posts.size == 0 %}
     <p class="blog-empty">아직 쓴 글이 없습니다. <code>templates/post.md</code>를 <code>_posts/</code>에 복사해서 첫 기록을 남겨 보세요.</p>
     {% endif %}
@@ -85,10 +98,17 @@ show-avatar: false
     <h2 class="side-tags">태그</h2>
     {% endif %}
     <nav class="blog-filter">
-      {% for t in tag_list %}
-      <button type="button" class="filter" data-kind="tag" data-value="{{ t }}">{{ t }} <span>{{ site.tags[t].size }}</span></button>
+      {% for r in tag_rank %}
+      {%- assign parts = r | split: "#" -%}
+      {%- assign tn = parts[1] -%}
+      {%- assign tc = parts[0] | minus: 1000 -%}
+      <button type="button" class="filter{% if forloop.index > TAG_TOP %} tag-more{% endif %}" data-kind="tag" data-value="{{ tn }}"{% if forloop.index > TAG_TOP %} hidden{% endif %}>{{ tn }} <span>{{ tc }}</span></button>
       {% endfor %}
     </nav>
+    {% if tag_rank.size > TAG_TOP %}
+    {%- assign more = tag_rank.size | minus: TAG_TOP -%}
+    <button type="button" class="tag-more-toggle" aria-expanded="false" data-more="{{ more }}">태그 {{ more }}개 더 보기</button>
+    {% endif %}
   </aside>
 </div>
 
@@ -99,22 +119,80 @@ show-avatar: false
     var all = document.querySelector('.blog-side .filter[data-kind="all"]')
     var items = document.querySelectorAll(".blog-list li")
     var count = document.getElementById("blog-count")
+    var pager = document.querySelector(".blog-pager")
+    var list = document.querySelector(".blog-list")
+    var PAGE = 6
+    var matched = Array.prototype.slice.call(items)
+    var page = 1
 
-    function apply(btn) {
-      var kind = btn.dataset.kind
-      var value = btn.dataset.value
-      var shown = 0
-      filters.forEach(function (f) { f.classList.toggle("is-active", f === btn) })
-      items.forEach(function (li) {
+    // 지금 고른 거르기 결과(matched) 중 page 쪽의 6개만 보이고, 아래에 쪽 번호를 그린다
+    function render(scroll) {
+      var pages = Math.max(1, Math.ceil(matched.length / PAGE))
+      page = Math.min(Math.max(1, page), pages)
+      items.forEach(function (li) { li.hidden = true })
+      matched.slice((page - 1) * PAGE, page * PAGE).forEach(function (li) { li.hidden = false })
+      pager.innerHTML = ""
+      if (pages > 1) {
+        var add = function (label, target, opts) {
+          var b = document.createElement("button")
+          b.type = "button"
+          b.textContent = label
+          if (opts && opts.current) { b.className = "is-current"; b.setAttribute("aria-current", "page") }
+          if (opts && opts.label) b.setAttribute("aria-label", opts.label)
+          if (target < 1 || target > pages) b.disabled = true
+          b.addEventListener("click", function () { page = target; render(true) })
+          pager.appendChild(b)
+        }
+        add("‹", page - 1, { label: "이전 쪽" })
+        for (var i = 1; i <= pages; i++) add(String(i), i, { current: i === page })
+        add("›", page + 1, { label: "다음 쪽" })
+      }
+      if (scroll) list.scrollIntoView({ block: "start" })
+    }
+
+    var search = document.getElementById("blog-search")
+    var noresult = document.querySelector(".blog-noresult")
+    var current = all
+
+    // 고른 폴더·태그(current)와 검색어를 함께 만족하는 글만 남긴다
+    function refresh() {
+      var kind = current.dataset.kind
+      var value = current.dataset.value
+      var words = search.value.trim().toLowerCase().split(/\s+/).filter(Boolean)
+      matched = Array.prototype.filter.call(items, function (li) {
         var hit = kind === "all" ||
           (kind === "category" && li.dataset.category === value) ||
           (kind === "series" && li.dataset.category + "|" + li.dataset.series === value) ||
           (kind === "tag" && li.dataset.tags.indexOf("|" + value + "|") !== -1)
-        li.hidden = !hit
-        if (hit) shown++
+        return hit && words.every(function (w) { return li.dataset.search.indexOf(w) !== -1 })
       })
-      count.textContent = shown
+      count.textContent = matched.length
+      noresult.hidden = matched.length > 0 || items.length === 0
+      page = 1
+      render(false)
     }
+
+    function apply(btn) {
+      current = btn
+      filters.forEach(function (f) { f.classList.toggle("is-active", f === btn) })
+      refresh()
+    }
+
+    search.addEventListener("input", refresh)
+    // "/"를 누르면 검색창으로 (입력 중일 때는 제외)
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "/" && !/INPUT|TEXTAREA/.test(document.activeElement.tagName)) { e.preventDefault(); search.focus() }
+      if (e.key === "Escape" && document.activeElement === search) { search.value = ""; refresh(); search.blur() }
+    })
+
+    // 태그 더 보기·접기
+    var moreBtn = document.querySelector(".tag-more-toggle")
+    if (moreBtn) moreBtn.addEventListener("click", function () {
+      var open = moreBtn.getAttribute("aria-expanded") !== "true"
+      document.querySelectorAll(".tag-more").forEach(function (b) { b.hidden = !open })
+      moreBtn.setAttribute("aria-expanded", open ? "true" : "false")
+      moreBtn.textContent = open ? "태그 접기" : "태그 " + moreBtn.dataset.more + "개 더 보기"
+    })
 
     // 큰 폴더 펼치기·접기: 화살표를 누르면 하위 시리즈가 열리고 닫힌다
     function setOpen(group, open) {
@@ -138,5 +216,7 @@ show-avatar: false
         if (g && target.dataset.kind === "category") setOpen(g, true)
       })
     })
+
+    render(false)
   })()
 </script>

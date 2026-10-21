@@ -3,7 +3,7 @@ title: "Gazebo 4. LiDAR 사용해보기"
 excerpt: "lidar.xacro로 레이 센서를 붙이고 LaserScan 데이터를 rviz2에서 확인한 기록."
 category: Robotics
 series: "Gazebo"
-tags: ["gazebo", "ros2", "urdf", "xacro", "lidar", "rviz2"]
+tags: ["gazebo", "ros2", "urdf", "lidar", "rviz2"]
 thumbnail-img: /assets/img/posts/gazebo-4-lidar/1.png
 ---
 
