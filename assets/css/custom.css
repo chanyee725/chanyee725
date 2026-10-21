@@ -853,3 +853,96 @@ footer .fa-stack .fa-circle {
 .folders .filter.sub i {
   font-size: 0.8rem;
 }
+
+/* 사이드바: 큰 폴더 앞 화살표로 펼치기·접기 */
+.folder-row {
+  display: flex;
+  align-items: center;
+}
+.folder-row .filter {
+  flex: 1;
+}
+.folder-toggle,
+.folder-toggle-space {
+  flex-shrink: 0;
+  width: 1.4rem;
+  height: 1.4rem;
+}
+.folder-toggle {
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: #9aa0b4;
+  cursor: pointer;
+}
+.folder-toggle:hover {
+  background: #f3f4f8;
+  color: #1b2c8f;
+}
+.folder-toggle:focus-visible {
+  outline: 2px solid #1b2c8f;
+  outline-offset: 1px;
+}
+.folder-toggle i {
+  font-size: 0.65rem;
+  transition: transform 0.15s ease;
+}
+.folder-toggle[aria-expanded="true"] i {
+  transform: rotate(90deg);
+}
+.folder-children .filter.sub {
+  padding-left: 2.6rem;
+}
+@media (prefers-reduced-motion: reduce) {
+  .folder-toggle i {
+    transition: none;
+  }
+}
+
+/* ── 글 본문 글자 위계: 제목 32 > ## 22 > ### 18 > #### 16, 문단 간격은 촘촘하게 ── */
+.intro-header .post-heading h1 {
+  font-size: 32px;
+  line-height: 1.3;
+}
+.blog-post {
+  font-size: 16px;
+  line-height: 1.75;
+}
+.blog-post p {
+  margin: 0 0 0.9rem;
+}
+.blog-post h2 {
+  margin: 2.25rem 0 0.75rem;
+  font-size: 22px;
+  line-height: 1.35;
+}
+.blog-post h3 {
+  margin: 1.75rem 0 0.6rem;
+  font-size: 18px;
+  line-height: 1.4;
+}
+.blog-post h4,
+.blog-post h5 {
+  margin: 1.5rem 0 0.5rem;
+  font-size: 16px;
+  font-weight: 700;
+}
+.blog-post > :first-child {
+  margin-top: 0;
+}
+.blog-post ul,
+.blog-post ol {
+  margin: 0 0 0.9rem;
+}
+.blog-post .highlight,
+.blog-post pre {
+  margin: 0.4rem 0 1.1rem;
+}
+/* '전체'는 화살표가 없으니 다른 큰 폴더와 왼쪽 줄을 맞춘다 */
+.folders > .filter[data-kind="all"] {
+  margin-left: 1.4rem;
+  width: calc(100% - 1.4rem);
+}

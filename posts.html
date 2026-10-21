@@ -53,18 +53,31 @@ show-avatar: false
         전체 <span>{{ site.posts.size }}</span>
       </button>
       {% for c in cat_list %}
-      <button type="button" class="filter" data-kind="category" data-value="{{ c }}">
-        <i class="fas fa-folder-open folder-open" aria-hidden="true"></i><i class="fas fa-folder folder-closed" aria-hidden="true"></i>
-        {{ c }} <span>{{ site.categories[c].size }}</span>
-      </button>
       {%- assign series_list = site.categories[c] | map: "series" | compact | uniq | sort -%}
-      {% for se in series_list %}
-      {%- assign se_count = site.categories[c] | where: "series", se | size -%}
-      <button type="button" class="filter sub" data-kind="series" data-value="{{ c }}|{{ se }}">
-        <i class="far fa-folder-open folder-open" aria-hidden="true"></i><i class="far fa-folder folder-closed" aria-hidden="true"></i>
-        {{ se }} <span>{{ se_count }}</span>
-      </button>
-      {% endfor %}
+      <div class="folder-group">
+        <div class="folder-row">
+          {% if series_list.size > 0 %}
+          <button type="button" class="folder-toggle" aria-expanded="false" aria-label="{{ c }} 펼치기"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+          {% else %}
+          <span class="folder-toggle-space"></span>
+          {% endif %}
+          <button type="button" class="filter" data-kind="category" data-value="{{ c }}">
+            <i class="fas fa-folder-open folder-open" aria-hidden="true"></i><i class="fas fa-folder folder-closed" aria-hidden="true"></i>
+            {{ c }} <span>{{ site.categories[c].size }}</span>
+          </button>
+        </div>
+        {% if series_list.size > 0 %}
+        <div class="folder-children" hidden>
+          {% for se in series_list %}
+          {%- assign se_count = site.categories[c] | where: "series", se | size -%}
+          <button type="button" class="filter sub" data-kind="series" data-value="{{ c }}|{{ se }}">
+            <i class="far fa-folder-open folder-open" aria-hidden="true"></i><i class="far fa-folder folder-closed" aria-hidden="true"></i>
+            {{ se }} <span>{{ se_count }}</span>
+          </button>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
       {% endfor %}
     </nav>
 
@@ -103,9 +116,26 @@ show-avatar: false
       count.textContent = shown
     }
 
+    // 큰 폴더 펼치기·접기: 화살표를 누르면 하위 시리즈가 열리고 닫힌다
+    function setOpen(group, open) {
+      var t = group.querySelector(".folder-toggle")
+      var kids = group.querySelector(".folder-children")
+      if (!t || !kids) return
+      t.setAttribute("aria-expanded", open ? "true" : "false")
+      kids.hidden = !open
+    }
+    document.querySelectorAll(".folder-group").forEach(function (g) {
+      var t = g.querySelector(".folder-toggle")
+      if (t) t.addEventListener("click", function () { setOpen(g, t.getAttribute("aria-expanded") !== "true") })
+    })
+
     filters.forEach(function (btn) {
       btn.addEventListener("click", function () {
-        apply(btn.classList.contains("is-active") && btn !== all ? all : btn)
+        var target = btn.classList.contains("is-active") && btn !== all ? all : btn
+        apply(target)
+        // 큰 폴더를 고르면 그 폴더를 펼친다
+        var g = target.closest(".folder-group")
+        if (g && target.dataset.kind === "category") setOpen(g, true)
       })
     })
   })()
