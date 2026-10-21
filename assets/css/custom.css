@@ -208,3 +208,49 @@ ul.pagination.blog-pager {
   font-style: normal;
   color: #888;
 }
+
+/* 첫 화면 수상·자격증: 두 칸, 휴대폰에서는 한 칸 */
+.profile-lists {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2.5rem;
+  text-align: left;
+}
+.list-title {
+  margin: 0 0 0.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #222;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #555;
+}
+.cv-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.cv-list li {
+  display: flex;
+  flex-direction: column;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid #eee;
+}
+.cv-main {
+  font-weight: 500;
+}
+.cv-main b {
+  margin-left: 0.25rem;
+  color: #2557d6;
+  font-weight: 600;
+}
+.cv-sub {
+  font-size: 0.85rem;
+  color: #888;
+}
+@media (max-width: 640px) {
+  .profile-lists {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}

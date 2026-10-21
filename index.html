@@ -19,5 +19,24 @@ subtitle: 로봇이 직접 움직이는 걸 보면서 공부합니다
     <p>2주마다 데모 하나와 기록 하나를 남깁니다. 이론은 막힐 때 찾아보고, 찾아본 것도 여기에 정리합니다.</p>
   </div>
 
+  <div class="profile-lists">
+    <div>
+      <h2 class="list-title">수상</h2>
+      <ul class="cv-list">
+        {% for a in site.data.profile.awards %}
+        <li><span class="cv-main">{{ a.title }} <b>{{ a.prize }}</b></span><span class="cv-sub">{{ a.org }}</span></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div>
+      <h2 class="list-title">자격증</h2>
+      <ul class="cv-list">
+        {% for c in site.data.profile.certifications %}
+        <li><span class="cv-main">{{ c.title }}</span><span class="cv-sub">{{ c.org }} · {{ c.date }}</span></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
   <h2 class="recent-title">최신 글</h2>
 </section>

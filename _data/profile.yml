@@ -1,0 +1,12 @@
+# 첫 화면의 수상·자격증. 아래 예시를 실제 내용으로 바꿔 쓴다.
+# awards: title(대회), prize(상), org(주최)
+# certifications: title(자격증), org(발급 기관), date(취득 연월)
+awards:
+  - title: 대회 이름
+    prize: 상 이름
+    org: 주최 기관
+
+certifications:
+  - title: 자격증 이름
+    org: 발급 기관
+    date: YYYY.MM
