@@ -27,7 +27,7 @@ title: AI Robotics Researcher
     <h2>수상</h2>
     <ul>
       {% for a in p.awards %}
-      <li>{{ a.title }} <b>{{ a.prize }}</b>{% if a.org %} <span class="home-sub">{{ a.org }}</span>{% endif %}</li>
+      <li>{{ a.title }} <b>{{ a.prize }}</b>{% if a.org %} <span class="home-sub">at {{ a.org }}</span>{% endif %}</li>
       {% endfor %}
     </ul>
   </section>
