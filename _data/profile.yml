@@ -36,9 +36,12 @@ certifications:
 # ── 학력은 첫 화면과 CV 페이지에, 어학은 CV 페이지에만 나온다 ──
 # education: period(기간), title(학교·학과), note(상태 등)
 education:
-  - period: YYYY.MM – YYYY.MM
-    title: 학교 · 학과
-    note: 졸업 예정
+  - period: 2025.02 – 현재
+    title: 한양사이버대학교 컴퓨터공학과
+    note: 학사 재학 (2029.02 졸업 예정)
+  - period: 2022.03 – 2025.01
+    title: 부산소프트웨어마이스터고등학교
+    note: 임베디드소프트웨어과
 
 # languages: title(시험), score(점수), date(응시 연월)
 languages:
