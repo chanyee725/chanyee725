@@ -17,6 +17,9 @@ career:
 
 # activities: 교육·연수·활동 (/activities 페이지). title(이름), org(기관), period(기간), file(수료증 PDF, assets/files/ 기준)
 activities:
+  - title: "특강 · PCL 센서 데이터 사용하기"
+    note: 모교 후배 대상 PCL(Point Cloud Library) 강의
+    period: 2025.12.29
   - title: 소프트웨이브(SoftWave) 2023 · Exhibitor
     note: 의료용 스마트미러 서비스 소개 및 시연
     period: 2023.11.30
