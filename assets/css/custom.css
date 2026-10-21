@@ -523,6 +523,7 @@ ul.pagination.blog-pager {
   color: #666;
 }
 .blog-list img {
+  order: -1;
   flex-shrink: 0;
   width: 7.5rem;
   aspect-ratio: 3 / 2;
