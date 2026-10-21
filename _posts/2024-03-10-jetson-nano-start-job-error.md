@@ -2,6 +2,7 @@
 title: "Jetson Nano A start job 에러 해결"
 excerpt: "부팅 중 A start job is running 메시지에서 멈춘 Jetson Nano를 전원을 껐다 켜서 해결한 기록."
 category: Hardware
+series: "Jetson Nano"
 tags: ["jetson-nano", "troubleshooting"]
 thumbnail-img: /assets/img/posts/jetson-nano-start-job-error/1.jpeg
 ---

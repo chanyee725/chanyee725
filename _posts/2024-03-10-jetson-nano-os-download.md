@@ -2,6 +2,7 @@
 title: "Jetson Nano OS 다운로드"
 excerpt: "NVIDIA Jetson Download Center에서 OS 이미지를 받고 Win32 Disk Imager로 SD 카드에 굽는 방법."
 category: Hardware
+series: "Jetson Nano"
 tags: ["jetson-nano"]
 thumbnail-img: /assets/img/posts/jetson-nano-os-download/1.png
 ---

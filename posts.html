@@ -5,12 +5,17 @@ nav-short: true
 show-avatar: false
 ---
 
-{% comment %} 블로그 목록: 왼쪽 글 목록(제목 | 태그 · 날짜 · 두 줄 요약 · 썸네일), 오른쪽 사이드바(분류 폴더 → 태그) {% endcomment %}
+{% comment %} 블로그 목록: 왼쪽 글 목록(제목 | 시리즈 · 날짜 · 두 줄 요약 · 썸네일), 오른쪽 사이드바(분류 폴더 → 시리즈 하위 폴더 → 태그) {% endcomment %}
 
 {%- capture tag_names -%}{%- for t in site.tags -%}{{ t[0] }}{%- unless forloop.last -%},{%- endunless -%}{%- endfor -%}{%- endcapture -%}
 {%- assign tag_list = tag_names | split: ',' | sort -%}
 {%- capture cat_names -%}{%- for c in site.categories -%}{{ c[0] }}{%- unless forloop.last -%},{%- endunless -%}{%- endfor -%}{%- endcapture -%}
-{%- assign cat_list = cat_names | split: ',' | sort -%}
+{%- assign cat_found = cat_names | split: ',' -%}
+{%- comment -%} 분류 순서: 먼저 이 순서대로, 그 밖의 분류는 뒤에 {%- endcomment -%}
+{%- assign cat_order = "Robotics,Hardware,OS,트러블슈팅" | split: "," -%}
+{%- assign cat_list = "" | split: "" -%}
+{%- for c in cat_order -%}{%- if cat_found contains c -%}{%- assign cat_list = cat_list | push: c -%}{%- endif -%}{%- endfor -%}
+{%- for c in cat_found -%}{%- unless cat_list contains c -%}{%- assign cat_list = cat_list | push: c -%}{%- endunless -%}{%- endfor -%}
 
 <div class="blog">
   <div class="blog-main">
@@ -18,12 +23,12 @@ show-avatar: false
 
     <ul class="blog-list">
       {% for post in site.posts %}
-      <li data-category="{{ post.category }}" data-tags="|{{ post.tags | join: '|' }}|">
+      <li data-category="{{ post.category }}" data-series="{{ post.series }}" data-tags="|{{ post.tags | join: '|' }}|">
         <a href="{{ post.url | relative_url }}">
           <div class="blog-text">
             <div class="blog-head">
               <span class="blog-title">{{ post.title }}</span>
-              {% if post.tags.size > 0 %}<span class="blog-tag">{{ post.tags | first }}</span>{% endif %}
+              {% if post.series %}<span class="blog-tag">{{ post.series }}</span>{% elsif post.tags.size > 0 %}<span class="blog-tag">{{ post.tags | first }}</span>{% endif %}
               <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: site.date_format }}</time>
             </div>
             <p>{{ post.excerpt | strip_html | strip }}</p>
@@ -52,6 +57,14 @@ show-avatar: false
         <i class="fas fa-folder-open folder-open" aria-hidden="true"></i><i class="fas fa-folder folder-closed" aria-hidden="true"></i>
         {{ c }} <span>{{ site.categories[c].size }}</span>
       </button>
+      {%- assign series_list = site.categories[c] | map: "series" | compact | uniq | sort -%}
+      {% for se in series_list %}
+      {%- assign se_count = site.categories[c] | where: "series", se | size -%}
+      <button type="button" class="filter sub" data-kind="series" data-value="{{ c }}|{{ se }}">
+        <i class="far fa-folder-open folder-open" aria-hidden="true"></i><i class="far fa-folder folder-closed" aria-hidden="true"></i>
+        {{ se }} <span>{{ se_count }}</span>
+      </button>
+      {% endfor %}
       {% endfor %}
     </nav>
 
@@ -67,7 +80,7 @@ show-avatar: false
 </div>
 
 <script>
-  // 폴더(분류)나 태그를 하나 고르면 왼쪽 목록이 그 글만 남는다. 고른 것을 다시 누르면 전체로 돌아간다.
+  // 폴더(분류·시리즈)나 태그를 하나 고르면 왼쪽 목록이 그 글만 남는다. 고른 것을 다시 누르면 전체로 돌아간다.
   (function () {
     var filters = document.querySelectorAll(".blog-side .filter")
     var all = document.querySelector('.blog-side .filter[data-kind="all"]')
@@ -82,6 +95,7 @@ show-avatar: false
       items.forEach(function (li) {
         var hit = kind === "all" ||
           (kind === "category" && li.dataset.category === value) ||
+          (kind === "series" && li.dataset.category + "|" + li.dataset.series === value) ||
           (kind === "tag" && li.dataset.tags.indexOf("|" + value + "|") !== -1)
         li.hidden = !hit
         if (hit) shown++

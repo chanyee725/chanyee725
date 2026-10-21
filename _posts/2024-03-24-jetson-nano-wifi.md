@@ -2,6 +2,7 @@
 title: "Jetson Nano 와이파이"
 excerpt: "와이파이 동글이 오기 전까지 LAN 선으로 Jetson Nano를 연결해 켜 본 기록."
 category: Hardware
+series: "Jetson Nano"
 tags: ["jetson-nano"]
 thumbnail-img: /assets/img/posts/jetson-nano-wifi/1.jpeg
 ---

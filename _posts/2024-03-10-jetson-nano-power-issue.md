@@ -2,6 +2,7 @@
 title: "Jetson Nano 전원 안켜짐"
 excerpt: "어댑터로 전원을 줬는데 Jetson Nano가 켜지지 않아 점프 케이블 위치를 바꿔 해결한 기록."
 category: Hardware
+series: "Jetson Nano"
 tags: ["jetson-nano", "troubleshooting"]
 thumbnail-img: /assets/img/posts/jetson-nano-power-issue/1.jpeg
 ---

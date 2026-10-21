@@ -842,3 +842,14 @@ footer .fa-stack .fa-circle {
   border: 1px solid #eef0f5;
   border-radius: 8px;
 }
+
+/* 분류 아래 시리즈 하위 폴더: 들여쓰고 조금 작게 */
+.folders .filter.sub {
+  padding: 0.3rem 0.55rem 0.3rem 1.6rem;
+  font-size: 0.86rem;
+  font-weight: 400;
+  color: #555;
+}
+.folders .filter.sub i {
+  font-size: 0.8rem;
+}

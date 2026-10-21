@@ -2,6 +2,7 @@
 title: "데스크탑 우분투 실행시 검은색 화면"
 excerpt: "RTX 그래픽카드 데스크탑에서 듀얼부팅 우분투가 검은 화면만 뜰 때 네트워크를 켜고 그래픽카드 드라이버를 다시 설치해 해결한 기록."
 category: OS
+series: "Ubuntu"
 tags: ["ubuntu", "troubleshooting"]
 ---
 
