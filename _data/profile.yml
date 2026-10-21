@@ -5,9 +5,12 @@ mission: 말을 이해하고 안전하게 움직이는 로봇 정책
 
 # career: role(직책), org(회사), period(기간). 위에서부터 보인다 (최신을 위에)
 career:
-  - role: 연구원 (정규직, 병역특례 2026.02 – 2028.12)
+  - role: AI Robotics Researcher (정규직, 병역특례 2026.02 – 2028.12)
     org: 바질컴퍼니
-    period: 2024.10 – 현재
+    period: 2025.07 – 현재
+  - role: Software Engineer (정규직)
+    org: 바질컴퍼니
+    period: 2024.10 – 2025.06
   - role: Software Engineer 인턴
     org: 바질컴퍼니
     period: 2024.07 – 2024.10
