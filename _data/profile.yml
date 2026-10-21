@@ -6,9 +6,14 @@ mission: VLA로 로봇이 배우는 방법을 이해하고 직접 만들어 보�
 # awards: title(대회), prize(상), org(주최), date(연월, 없으면 생략)
 # certifications: title(자격증), org(발급 기관), date(취득 연월)
 awards:
-  - title: 대회 이름
-    prize: 상 이름
-    org: 주최 기관
+  - title: 교내 해커톤 대회
+    prize: 대상
+  - title: 전공동아리 프로젝트 발표회
+    prize: 최우수상
+  - title: 임베디드 해커톤
+    prize: 우수상
+  - title: 임베디드 IoT 웹 프로젝트 경진대회
+    prize: 장려상
 
 certifications:
   - title: 자격증 이름
