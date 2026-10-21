@@ -1,16 +1,8 @@
 /* 공부 기록 — Beautiful Jekyll 위에 얹는 스타일. 글꼴 하나(Pretendard), 무채색 + 파란 링크 하나 */
 
+/* 전체 Pretendard. 아이콘 폰트(Font Awesome)와 코드만 제외 */
 body,
-h1, h2, h3, h4, h5, h6,
-.navbar-custom,
-.post-preview a,
-.post-preview .post-meta,
-.intro-header .page-heading .page-subheading,
-.intro-header .post-heading .post-subheading,
-.post-meta,
-.footer-custom,
-.btn,
-input {
+body *:not(code):not(pre):not(kbd):not(samp):not(.fa):not(.fas):not(.far):not(.fab):not([class*="fa-"]) {
   font-family: "Pretendard Variable", Pretendard, system-ui, sans-serif !important;
 }
 
