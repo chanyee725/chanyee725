@@ -25,6 +25,15 @@ title: AI Robotics Researcher
   </div>
 
   <section class="home-section">
+    <h2>학력</h2>
+    <ul>
+      {% for e in p.education %}
+      <li>{{ e.title }}{% if e.note %} <span class="home-at">{{ e.note }}</span>{% endif %} <span class="home-sub">{{ e.period }}</span></li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section class="home-section">
     <h2>경력</h2>
     <ul>
       {% for c in p.career %}

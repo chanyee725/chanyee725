@@ -33,7 +33,7 @@ certifications:
     org: 발급 기관
     date: YYYY.MM
 
-# ── CV 페이지(/cv)에만 나오는 항목 ──
+# ── 학력은 첫 화면과 CV 페이지에, 어학은 CV 페이지에만 나온다 ──
 # education: period(기간), title(학교·학과), note(상태 등)
 education:
   - period: YYYY.MM – YYYY.MM
