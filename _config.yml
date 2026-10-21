@@ -73,6 +73,8 @@ defaults:
       layout: "post"
       comments: false
       social-share: false
+      show-avatar: false   # 글 화면에는 프로필 사진을 띄우지 않는다
+      nav-short: true
   - scope:
       path: ""
     values:
