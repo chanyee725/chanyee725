@@ -149,6 +149,10 @@ h4 {
 .home-section li {
   margin: 0.15rem 0;
 }
+.home-section b {
+  color: #1b2c8f;
+  font-weight: 600;
+}
 .home-sub {
   margin-left: 0.35rem;
   font-size: 0.9em;
@@ -257,54 +261,5 @@ ul.pagination.blog-pager {
   }
   .home-mission {
     font-size: 19px;
-  }
-}
-
-/* 수상·자격증: CV처럼 왼쪽 날짜, 가운데 항목, 오른쪽 구분 */
-.cv {
-  margin: 0;
-  padding: 0 !important;
-  list-style: none;
-}
-.cv li {
-  display: grid;
-  grid-template-columns: 5.5rem 1fr auto;
-  gap: 1rem;
-  align-items: baseline;
-  margin: 0 !important;
-  padding: 0.55rem 0;
-  border-bottom: 1px solid #f0f0f0;
-}
-.cv li:last-child {
-  border-bottom: 0;
-}
-.cv-date {
-  font-size: 0.9rem;
-  font-variant-numeric: tabular-nums;
-  color: #888;
-}
-.cv-title {
-  font-weight: 500;
-  color: #2a2a2a;
-}
-.cv-note {
-  margin-left: 0.5rem;
-  font-size: 0.9rem;
-  color: #888;
-}
-.cv-kind {
-  font-size: 0.8rem;
-  color: #9aa0b4;
-}
-@media (max-width: 640px) {
-  .cv li {
-    grid-template-columns: 4.5rem 1fr;
-  }
-  .cv-kind {
-    display: none;
-  }
-  .cv-note {
-    display: block;
-    margin-left: 0;
   }
 }
