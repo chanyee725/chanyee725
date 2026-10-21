@@ -3,7 +3,7 @@ name: 이름
 label: Currently Exploring
 mission: VLA로 로봇이 배우는 방법을 이해하고 직접 만들어 보기
 
-# awards: title(대회), prize(상), org(주최)
+# awards: title(대회), prize(상), org(주최), date(연월, 없으면 생략)
 # certifications: title(자격증), org(발급 기관), date(취득 연월)
 awards:
   - title: 대회 이름
@@ -13,4 +13,17 @@ awards:
 certifications:
   - title: 자격증 이름
     org: 발급 기관
+    date: YYYY.MM
+
+# ── CV 페이지(/cv)에만 나오는 항목 ──
+# education: period(기간), title(학교·학과), note(상태 등)
+education:
+  - period: YYYY.MM – YYYY.MM
+    title: 학교 · 학과
+    note: 졸업 예정
+
+# languages: title(시험), score(점수), date(응시 연월)
+languages:
+  - title: TOEIC
+    score: 점수
     date: YYYY.MM

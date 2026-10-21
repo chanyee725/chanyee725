@@ -263,3 +263,49 @@ ul.pagination.blog-pager {
     font-size: 19px;
   }
 }
+
+/* CV 페이지: 섹션마다 제목 하나, 줄마다 왼쪽 날짜 */
+.cv-page section {
+  margin-bottom: 2rem;
+}
+.cv-page h2 {
+  margin: 0 0 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 22px;
+}
+.cv-page ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.cv-page li {
+  display: flex;
+  gap: 1.25rem;
+  padding: 0.3rem 0;
+}
+.cv-when {
+  flex: 0 0 10rem;
+  white-space: nowrap;
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+  color: #888;
+}
+.cv-what b {
+  color: #1b2c8f;
+  font-weight: 600;
+}
+.cv-org {
+  margin-left: 0.35rem;
+  font-size: 0.9em;
+  color: #888;
+}
+@media (max-width: 640px) {
+  .cv-page li {
+    flex-direction: column;
+    gap: 0;
+  }
+  .cv-when {
+    flex-basis: auto;
+  }
+}

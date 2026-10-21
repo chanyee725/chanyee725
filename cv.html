@@ -1,0 +1,44 @@
+---
+layout: page
+title: CV
+---
+
+{% assign p = site.data.profile %}
+
+<div class="cv-page">
+  <section>
+    <h2>학력</h2>
+    <ul>
+      {% for e in p.education %}
+      <li><span class="cv-when">{{ e.period }}</span><span class="cv-what">{{ e.title }}{% if e.note %} <span class="cv-org">{{ e.note }}</span>{% endif %}</span></li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section>
+    <h2>어학</h2>
+    <ul>
+      {% for l in p.languages %}
+      <li><span class="cv-when">{{ l.date }}</span><span class="cv-what">{{ l.title }} <b>{{ l.score }}</b></span></li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section>
+    <h2>자격증</h2>
+    <ul>
+      {% for c in p.certifications %}
+      <li><span class="cv-when">{{ c.date }}</span><span class="cv-what">{{ c.title }} <span class="cv-org">{{ c.org }}</span></span></li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section>
+    <h2>수상</h2>
+    <ul>
+      {% for a in p.awards %}
+      <li><span class="cv-when">{{ a.date }}</span><span class="cv-what">{{ a.title }} <b>{{ a.prize }}</b> <span class="cv-org">{{ a.org }}</span></span></li>
+      {% endfor %}
+    </ul>
+  </section>
+</div>
