@@ -794,3 +794,39 @@ footer .theme-by {
 footer .fa-stack .fa-circle {
   color: #1f2a44;
 }
+
+/* 경력: 회사 한 줄 + 그 아래 직책 들여쓰기 */
+.home-section li.org-item {
+  display: block;
+}
+.org-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1.5rem;
+}
+.org-name {
+  font-weight: 600;
+}
+.role-list {
+  margin: 0.2rem 0 0 !important;
+  padding: 0 0 0 1.1rem !important;
+  border-left: 1px solid #e6e8f0;
+  margin-left: 0.3rem !important;
+  list-style: none;
+}
+.role-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1.5rem;
+  font-size: 14px !important;
+  color: #555;
+}
+@media (max-width: 640px) {
+  .org-row,
+  .role-list li {
+    flex-direction: column;
+    gap: 0;
+  }
+}

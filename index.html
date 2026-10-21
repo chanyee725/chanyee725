@@ -35,9 +35,22 @@ title: AI Robotics Researcher
 
   <section class="home-section">
     <h2>경력</h2>
+    {% comment %} 같은 회사(org)의 직책을 한 묶음으로: 회사 줄(전체 기간) 아래에 직책들을 들여 쓴다 {% endcomment %}
+    {% assign companies = p.career | group_by: "org" %}
     <ul>
-      {% for c in p.career %}
-      <li><span class="row-main">{{ c.role }}{% if c.org %} <span class="home-at">at {{ c.org }}</span>{% endif %}</span><span class="row-side">{{ c.period }}</span></li>
+      {% for co in companies %}
+      {% assign newest = co.items | first %}
+      {% assign oldest = co.items | last %}
+      {% assign from = oldest.period | split: " – " | first %}
+      {% assign to = newest.period | split: " – " | last %}
+      <li class="org-item">
+        <div class="org-row"><span class="row-main org-name">{{ co.name }}</span><span class="row-side">{{ from }} – {{ to }}</span></div>
+        <ul class="role-list">
+          {% for c in co.items %}
+          <li><span class="role-name">{{ c.role }}</span><span class="row-side">{{ c.period }}</span></li>
+          {% endfor %}
+        </ul>
+      </li>
       {% endfor %}
     </ul>
   </section>

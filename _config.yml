@@ -3,8 +3,10 @@
 
 title: AI Robotics Researcher
 author: AI Robotics Researcher
-baseurl: "/Docs"
-url: "https://chanyee725.github.io"
+# Vercel은 주소 맨 앞(/)에서 서비스하므로 baseurl은 비운다.
+# url은 도메인을 연결하면 적는다 (예: "https://example.com"). 비워 두면 링크가 상대 경로로 나간다.
+baseurl: ""
+url: ""
 
 # 위쪽 메뉴. 시리즈는 태그 페이지의 해당 태그로 연결한다.
 navbar-links:

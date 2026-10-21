@@ -1,6 +1,6 @@
 # 공부 기록
 
-로봇 학습(VLA)을 공부하며 한 것과 배운 것을 남기는 블로그. Jekyll + [Beautiful Jekyll](https://beautifuljekyll.com) 6.0.1 (MIT, `LICENSE`), GitHub Pages가 `main` 브랜치를 그대로 빌드한다.
+로봇 학습(VLA)을 공부하며 한 것과 배운 것을 남기는 블로그. Jekyll + [Beautiful Jekyll](https://beautifuljekyll.com) 6.0.1 (MIT, `LICENSE`). Vercel이 `main`에 push될 때마다 자동으로 빌드·배포한다 (`vercel.json`).
 
 ## 글 쓰기
 
@@ -24,3 +24,9 @@
 - 테마 안의 영어 문구 일부를 한국어로 바꿨다 (`_layouts/`, `_includes/`)
 
 공개 사이트다. 회사 내부 정보, 사람 이름, 연락처는 쓰지 않는다.
+
+## 배포 (Vercel)
+
+- Vercel에서 이 레포를 Import → 설정은 `vercel.json`을 그대로 쓴다 (Jekyll, `bundle exec jekyll build`, 결과 `_site`).
+- `main`에 push하면 자동 배포, 다른 브랜치는 미리보기 주소가 생긴다.
+- 도메인을 연결하면 `_config.yml`의 `url`에 그 주소를 적는다.
