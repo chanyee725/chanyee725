@@ -146,10 +146,17 @@ h4 {
   margin: 0 0 0.6rem;
   font-size: 30px;
 }
+.home-section {
+  text-align: left;
+}
 .home-section ul {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+.home-section li::before {
+  content: "- ";
+  color: #888;
 }
 .home-section li {
   margin: 0.15rem 0;
