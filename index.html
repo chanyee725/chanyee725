@@ -20,9 +20,18 @@ title: AI Robotics Researcher
 
   <div class="home-bio">
     <p>회사에서 처음 피지컬 AI를 접하고 깊은 호기심이 생겨 VLA를 공부하게 되었습니다.</p>
-    <p>현재 로봇 회사에서 병역특례로 근무하고 있으며(yyyy.mm ~ yyyy.mm), 퇴근 후에는 VLA를 깊이 이해하기 위해 SO-101을 직접 구매해 환경을 꾸리고 연구하고 있습니다.</p>
+    <p>현재 로봇 회사에서 병역특례로 근무하고 있으며(2026.02 ~ 2028.12 예정), 퇴근 후에는 VLA를 깊이 이해하기 위해 SO-101을 직접 구매해 환경을 꾸리고 연구하고 있습니다.</p>
     <p>VLA 연구에 필요한 수학 같은 기초는 사이버대학교 수업을 들으며 공부하고 있고, 주로 안전한(Safe) 로봇 학습과 LLM을 활용한 Policy 작성을 연구하고 있습니다.</p>
   </div>
+
+  <section class="home-section">
+    <h2>경력</h2>
+    <ul>
+      {% for c in p.career %}
+      <li>{{ c.role }}{% if c.org %} <span class="home-at">at {{ c.org }}</span>{% endif %} <span class="home-sub">{{ c.period }}</span></li>
+      {% endfor %}
+    </ul>
+  </section>
 
   <section class="home-section">
     <h2>수상</h2>
