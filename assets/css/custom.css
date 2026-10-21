@@ -634,3 +634,114 @@ footer .theme-by {
   margin-top: 0.2rem;
   font-size: 0.75rem;
 }
+
+/* ── 논문: 한 줄씩 아래로 쌓는 목록 ── */
+body:has(.papers) .intro-header {
+  margin: 51px 0 0;
+}
+.papers {
+  max-width: 750px;
+  margin: 0 auto;
+  padding-top: 2rem;
+}
+.paper-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid #404040;
+}
+.paper-list li {
+  padding: 1.1rem 0;
+  border-bottom: 1px solid #eee;
+}
+.paper-list p {
+  margin: 0;
+}
+.paper-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #2a2a2a;
+}
+.paper-authors {
+  margin-top: 0.2rem !important;
+  font-size: 0.92rem;
+  color: #555;
+}
+.paper-authors b {
+  color: #1b2c8f;
+}
+.paper-venue {
+  font-size: 0.9rem;
+  color: #888;
+}
+.paper-venue span:first-child {
+  font-style: italic;
+}
+.paper-status {
+  margin-left: 0.4rem;
+  padding: 0.05rem 0.5rem;
+  border: 1px solid #d9def2;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  color: #33416b;
+}
+.paper-links {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 0.5rem !important;
+}
+.paper-links a {
+  padding: 0.15rem 0.7rem;
+  border: 1px solid rgba(27, 44, 143, 0.2);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  color: #1b2c8f;
+  text-decoration: none;
+}
+.paper-empty {
+  padding: 3.5rem 1rem;
+  border-top: 1px solid #404040;
+  text-align: center;
+  color: #666;
+}
+.paper-empty > i {
+  font-size: 1.8rem;
+  color: #b8bfd9;
+}
+.paper-empty-title {
+  margin: 0.75rem 0 0.25rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #333;
+}
+.paper-empty p {
+  max-width: 30rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.paper-empty .home-cta {
+  margin-top: 0.75rem;
+}
+
+/* 아래쪽 바를 한 줄로: 아이콘 · 이름 · 연도 · 테마 표기를 가로로 놓는다 */
+footer .beautiful-jekyll-footer .row > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem 1rem;
+}
+footer .list-inline {
+  margin: 0 !important;
+}
+footer .copyright,
+footer .theme-by {
+  margin: 0 !important;
+}
+body > footer {
+  padding: 0.75rem 0;
+}
+/* 본문과 아래쪽 바 사이 숨 쉴 틈 */
+[role="main"] {
+  padding-bottom: 3rem;
+}
