@@ -1,7 +1,7 @@
 # 첫 화면 프로필. 아래 예시를 실제 내용으로 바꿔 쓴다.
 name: 이름
+label: Currently Exploring
 mission: VLA로 로봇이 배우는 방법을 이해하고 직접 만들어 보기
-role: Robot Software Engineer
 
 # awards: title(대회), prize(상), org(주최)
 # certifications: title(자격증), org(발급 기관), date(취득 연월)

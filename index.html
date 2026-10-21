@@ -6,12 +6,11 @@ title: AI Robotics Researcher
 {% assign p = site.data.profile %}
 
 <div class="home">
+  <div class="home-glow" aria-hidden="true"></div>
   <h1 class="home-name">{{ p.name }}</h1>
 
-  <p class="home-label">Research Mission</p>
+  <p class="home-label">{{ p.label }}</p>
   <p class="home-mission">{{ p.mission }}</p>
-
-  <p class="home-role"><i class="fas fa-briefcase" aria-hidden="true"></i> {{ p.role }}</p>
 
   <div class="home-ctas">
     <a class="home-cta home-cta--primary" href="{{ '/posts' | relative_url }}"><i class="fas fa-book-open" aria-hidden="true"></i> 글 목록</a>
