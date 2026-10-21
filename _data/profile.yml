@@ -12,6 +12,9 @@ career:
     org: 바질컴퍼니
     period: 2024.07 – 2024.10
 
+# activities: 교육·연수·활동. title(이름), org(기관), period(기간), file(수료증 PDF, assets/files/ 기준)
+activities: []
+
 # awards: title(대회), prize(상), org(주최), date(연월, 없으면 생략)
 # certifications: title(자격증), org(발급 기관), date(취득 연월)
 awards:
