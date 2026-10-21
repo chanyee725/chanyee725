@@ -10,7 +10,7 @@ thumbnail-img: /assets/img/blog-setup.svg
 
 - Jekyll + Beautiful Jekyll 테마. GitHub Pages가 레포를 그대로 빌드해서 올린다.
 - 글 하나 = `_posts/YYYY-MM-DD-이름.md` 파일 하나.
-- 위쪽 메뉴(VLA · 논문 · 수학)는 태그로 모은다.
+- 글 목록 오른쪽의 분류 폴더와 태그로 글을 걸러 본다.
 
 ## 새 글 쓰기
 

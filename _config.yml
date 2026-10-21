@@ -8,7 +8,6 @@ url: "https://chanyee725.github.io"
 
 # 위쪽 메뉴. 시리즈는 태그 페이지의 해당 태그로 연결한다.
 navbar-links:
-  논문: "papers"
   글 목록: "posts"
 
 # 프로필 사진 (지금은 데모 그림. 실제 사진으로 바꿀 때 이 파일만 교체)
