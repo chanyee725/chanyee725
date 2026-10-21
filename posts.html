@@ -1,53 +1,66 @@
 ---
-layout: page
+layout: default
 title: 글 목록
+nav-short: true
+show-avatar: false
 ---
 
-{% comment %} 블로그 목록: 위에 태그 필터, 아래 글마다 제목 | 태그 · 날짜 · 두 줄 요약 · 오른쪽 썸네일 {% endcomment %}
+{% comment %} 블로그 목록: 왼쪽 글 목록(제목 | 태그 · 날짜 · 두 줄 요약 · 썸네일), 오른쪽 태그 사이드바 {% endcomment %}
 
 {%- capture tag_names -%}{%- for t in site.tags -%}{{ t[0] }}{%- unless forloop.last -%},{%- endunless -%}{%- endfor -%}{%- endcapture -%}
 {%- assign tag_list = tag_names | split: ',' | sort -%}
 
 <div class="blog">
-  <nav class="blog-filter" aria-label="태그로 거르기">
-    <button type="button" class="is-active" data-tag="">전체 <span>{{ site.posts.size }}</span></button>
-    {% for t in tag_list %}
-    <button type="button" data-tag="{{ t }}">{{ t }} <span>{{ site.tags[t].size }}</span></button>
-    {% endfor %}
-  </nav>
+  <div class="blog-main">
+    <h1 class="blog-heading">글 목록 <span id="blog-count">{{ site.posts.size }}</span></h1>
 
-  <ul class="blog-list">
-    {% for post in site.posts %}
-    <li data-tags="|{{ post.tags | join: '|' }}|">
-      <a href="{{ post.url | relative_url }}">
-        <div class="blog-text">
-          <div class="blog-head">
-            <span class="blog-title">{{ post.title }}</span>
-            {% if post.tags.size > 0 %}<span class="blog-tag">{{ post.tags | first }}</span>{% endif %}
-            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: site.date_format }}</time>
+    <ul class="blog-list">
+      {% for post in site.posts %}
+      <li data-tags="|{{ post.tags | join: '|' }}|">
+        <a href="{{ post.url | relative_url }}">
+          <div class="blog-text">
+            <div class="blog-head">
+              <span class="blog-title">{{ post.title }}</span>
+              {% if post.tags.size > 0 %}<span class="blog-tag">{{ post.tags | first }}</span>{% endif %}
+              <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: site.date_format }}</time>
+            </div>
+            <p>{{ post.excerpt | strip_html | strip }}</p>
           </div>
-          <p>{{ post.excerpt | strip_html | strip }}</p>
-        </div>
-        {% if post.thumbnail-img %}
-        <img src="{{ post.thumbnail-img | relative_url }}" alt="" loading="lazy">
-        {% endif %}
-      </a>
-    </li>
-    {% endfor %}
-  </ul>
+          {% if post.thumbnail-img %}
+          <img src="{{ post.thumbnail-img | relative_url }}" alt="" loading="lazy">
+          {% endif %}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <aside class="blog-side" aria-label="태그">
+    <h2>태그</h2>
+    <nav class="blog-filter">
+      <button type="button" class="is-active" data-tag="">전체 <span>{{ site.posts.size }}</span></button>
+      {% for t in tag_list %}
+      <button type="button" data-tag="{{ t }}">{{ t }} <span>{{ site.tags[t].size }}</span></button>
+      {% endfor %}
+    </nav>
+  </aside>
 </div>
 
 <script>
   (function () {
     var buttons = document.querySelectorAll(".blog-filter button")
     var items = document.querySelectorAll(".blog-list li")
+    var count = document.getElementById("blog-count")
     buttons.forEach(function (btn) {
       btn.addEventListener("click", function () {
         var tag = btn.dataset.tag
+        var shown = 0
         buttons.forEach(function (b) { b.classList.toggle("is-active", b === btn) })
         items.forEach(function (li) {
           li.hidden = tag !== "" && li.dataset.tags.indexOf("|" + tag + "|") === -1
+          if (!li.hidden) shown++
         })
+        count.textContent = shown
       })
     })
   })()
