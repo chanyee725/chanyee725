@@ -696,3 +696,10 @@ body > footer {
 .home-cta--primary:hover {
   background: rgba(31, 52, 160, 1);
 }
+
+.blog-empty {
+  padding: 2.5rem 0;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+  color: #888;
+}

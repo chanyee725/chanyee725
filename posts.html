@@ -35,6 +35,9 @@ show-avatar: false
       </li>
       {% endfor %}
     </ul>
+    {% if site.posts.size == 0 %}
+    <p class="blog-empty">아직 쓴 글이 없습니다. <code>templates/post.md</code>를 <code>_posts/</code>에 복사해서 첫 기록을 남겨 보세요.</p>
+    {% endif %}
   </div>
 
   <aside class="blog-side" aria-label="분류와 태그">
@@ -52,7 +55,9 @@ show-avatar: false
       {% endfor %}
     </nav>
 
+    {% if tag_list.size > 0 %}
     <h2 class="side-tags">태그</h2>
+    {% endif %}
     <nav class="blog-filter">
       {% for t in tag_list %}
       <button type="button" class="filter" data-kind="tag" data-value="{{ t }}">{{ t }} <span>{{ site.tags[t].size }}</span></button>

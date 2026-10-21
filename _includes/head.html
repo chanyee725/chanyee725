@@ -2,11 +2,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+  {% comment %} 탭 제목: 첫 화면은 "이름 | 사이트 제목", 다른 페이지는 "페이지 제목 | 이름". 이름은 _data/profile.yml {% endcomment %}
+  {%- assign who = site.data.profile.name | default: site.title -%}
   {% capture title %}
     {%- if page.share-title -%}
       {{ page.share-title | strip_html | xml_escape }}
+    {%- elsif page.url == "/" -%}
+      {{ who | xml_escape }} | {{ site.title | xml_escape }}
     {%- elsif page.title -%}
-      {{ page.title | strip_html | xml_escape  }}
+      {{ page.title | strip_html | xml_escape }} | {{ who | xml_escape }}
     {%- else -%}
       {{ site.title | strip_html | xml_escape }}
     {%- endif -%}
