@@ -42,17 +42,6 @@ title: AI Robotics Researcher
     </ul>
   </section>
 
-  {% if p.activities.size > 0 %}
-  <section class="home-section">
-    <h2>교육·활동</h2>
-    <ul>
-      {% for t in p.activities %}
-      <li><span class="row-main">{{ t.title }}{% if t.org %} <span class="home-at">at {{ t.org }}</span>{% endif %}{% if t.file %} <a class="row-file" href="{{ t.file | relative_url }}"><i class="far fa-file-pdf" aria-hidden="true"></i> 수료증</a>{% endif %}</span><span class="row-side">{{ t.period }}</span></li>
-      {% endfor %}
-    </ul>
-  </section>
-  {% endif %}
-
   <section class="home-section">
     <h2>수상</h2>
     <ul>

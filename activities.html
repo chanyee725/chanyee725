@@ -1,0 +1,32 @@
+---
+layout: default
+title: 교육·활동
+nav-short: true
+show-avatar: false
+---
+
+{% assign items = site.data.profile.activities %}
+
+<div class="activities">
+  <h1 class="blog-heading">교육·활동</h1>
+
+  {% if items.size > 0 %}
+  <ul class="act-list">
+    {% for t in items %}
+    <li>
+      <div class="act-main">
+        <p class="act-title">{{ t.title }}</p>
+        {% if t.org %}<p class="act-org">{{ t.org }}</p>{% endif %}
+        {% if t.note %}<p class="act-note">{{ t.note }}</p>{% endif %}
+      </div>
+      <div class="act-side">
+        <span>{{ t.period }}</span>
+        {% if t.file %}<a class="row-file" href="{{ t.file | relative_url }}"><i class="far fa-file-pdf" aria-hidden="true"></i> 수료증</a>{% endif %}
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="blog-empty">아직 기록한 교육·활동이 없습니다.</p>
+  {% endif %}
+</div>

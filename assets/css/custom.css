@@ -703,3 +703,66 @@ body > footer {
   text-align: center;
   color: #888;
 }
+
+/* ── 교육·활동 페이지: 한 줄에 이름·기관(왼쪽), 기간·수료증(오른쪽) ── */
+body:has(.activities) .intro-header {
+  margin: 51px 0 0;
+}
+.activities {
+  max-width: 750px;
+  margin: 0 auto;
+  padding-top: 2rem;
+}
+.act-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid #404040;
+}
+.act-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid #eee;
+}
+.act-list p {
+  margin: 0;
+}
+.act-title {
+  font-weight: 600;
+  color: #2a2a2a;
+}
+.act-org {
+  font-size: 0.92rem;
+  color: #555;
+}
+.act-note {
+  margin-top: 0.25rem !important;
+  font-size: 0.9rem;
+  color: #777;
+}
+.act-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.4rem;
+  flex-shrink: 0;
+  font-size: 0.88rem;
+  font-variant-numeric: tabular-nums;
+  color: #888;
+}
+.act-side .row-file {
+  margin-left: 0;
+}
+@media (max-width: 640px) {
+  .act-list li {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .act-side {
+    flex-direction: row;
+    align-items: center;
+  }
+}
