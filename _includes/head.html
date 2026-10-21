@@ -1,5 +1,14 @@
 <head>
   <meta charset="utf-8">
+  {% comment %} 테마: 저장한 선택이 있으면 그것, 없으면 기기 설정. 화면을 그리기 전에 정해서 새로고침 때 깜빡이지 않게 한다 {% endcomment %}
+  <script>
+    (function () {
+      var t = null
+      try { t = localStorage.getItem("theme") } catch (e) {}
+      if (t !== "dark" && t !== "light") t = window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
+      document.documentElement.setAttribute("data-theme", t)
+    })()
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   {% comment %} 탭 제목: 첫 화면은 "이름 | 사이트 제목", 다른 페이지는 "페이지 제목 | 이름". 이름은 _data/profile.yml {% endcomment %}

@@ -1,8 +1,9 @@
 /* AI Robotics Researcher — Beautiful Jekyll 위에 얹는 스타일.
-   글꼴은 Pretendard 하나(라틴 글자는 Inter 기반). 테마 기본 글꼴(Lora, Open Sans)은 불러오지 않는다. */
+   글꼴은 Pretendard 하나(라틴 글자는 Inter 기반). 테마 기본 글꼴(Lora, Open Sans)은 불러오지 않는다.
+   코드와 그 안의 구문 강조 조각은 빼서 고정폭 글꼴을 유지한다. */
 
 body,
-body *:not(code):not(pre):not(kbd):not(samp):not(.fa):not(.fas):not(.far):not(.fab):not([class*="fa-"]) {
+body *:not(code):not(pre):not(pre *):not(code *):not(kbd):not(samp):not(.fa):not(.fas):not(.far):not(.fab):not([class*="fa-"]) {
   font-family: "Pretendard Variable", Pretendard, system-ui, sans-serif !important;
 }
 

@@ -1,0 +1,426 @@
+/* 다크 테마: <html data-theme="dark">일 때만 적용된다 (custom.css 뒤에 불러온다).
+   밝은 테마의 흰 바탕 · 흑연색 글자 · 남색 포인트를 어두운 바탕 · 밝은 회색 글자 · 밝은 남색 포인트로 옮긴다.
+   폴더 아이콘의 호박색은 두 테마에서 같다. */
+
+html[data-theme="dark"] {
+  --bg: #121418;
+  --surface: #1a1d23;
+  --surface-2: #22262e;
+  --line: #2b303a;
+  --text: #d5d8df;
+  --strong: #f1f2f5;
+  --muted: #9aa1b0;
+  --faint: #6c7383;
+  --accent: #9aabff;
+  --accent-soft: rgba(154, 171, 255, 0.12);
+  --accent-line: rgba(154, 171, 255, 0.28);
+  --ink: var(--accent);
+  --ink-soft: var(--accent-soft);
+  --ink-line: var(--accent-line);
+  --panel: var(--surface);
+  --panel-line: var(--line);
+  color-scheme: dark;
+}
+
+/* ── 바탕·글자·링크 ── */
+html[data-theme="dark"] body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4,
+html[data-theme="dark"] h5,
+html[data-theme="dark"] h6,
+html[data-theme="dark"] .blog-title,
+html[data-theme="dark"] .act-title {
+  color: var(--strong);
+}
+html[data-theme="dark"] a {
+  color: var(--accent);
+}
+html[data-theme="dark"] a:hover,
+html[data-theme="dark"] a:focus {
+  color: #c3ccff;
+}
+html[data-theme="dark"] hr {
+  border-color: var(--line);
+}
+html[data-theme="dark"] ::selection {
+  background: rgba(154, 171, 255, 0.3);
+}
+
+/* ── 위·아래 바 ── */
+html[data-theme="dark"] .navbar-custom {
+  background-color: rgba(18, 20, 24, 0.82) !important;
+  border-bottom-color: var(--line) !important;
+}
+html[data-theme="dark"] .navbar-custom .navbar-brand,
+html[data-theme="dark"] .navbar-custom .nav-link {
+  color: var(--strong) !important;
+}
+html[data-theme="dark"] .navbar-custom .nav-link:hover {
+  color: var(--accent) !important;
+}
+html[data-theme="dark"] .navbar-custom .navbar-toggler {
+  border-color: var(--line);
+}
+html[data-theme="dark"] .navbar-custom .navbar-toggler-icon {
+  filter: invert(1);
+}
+html[data-theme="dark"] .navbar-custom .navbar-collapse {
+  border-color: var(--line);
+}
+html[data-theme="dark"] body > footer {
+  background-color: var(--surface) !important;
+  border-top-color: var(--line) !important;
+}
+html[data-theme="dark"] footer .copyright,
+html[data-theme="dark"] footer .theme-by {
+  color: var(--muted) !important;
+}
+html[data-theme="dark"] footer .theme-by a,
+html[data-theme="dark"] footer a {
+  color: var(--text);
+}
+html[data-theme="dark"] footer .fa-stack .fa-circle {
+  color: var(--text);
+}
+html[data-theme="dark"] footer .fa-stack .fa-inverse {
+  color: var(--bg);
+}
+
+/* ── 첫 화면 ── */
+html[data-theme="dark"] .home-label,
+html[data-theme="dark"] .home-section b,
+html[data-theme="dark"] .cv-what b {
+  color: var(--accent);
+}
+html[data-theme="dark"] .home-mission {
+  color: var(--strong);
+}
+html[data-theme="dark"] .home-section,
+html[data-theme="dark"] .cv-page h2 {
+  border-color: var(--line);
+}
+html[data-theme="dark"] .home-at,
+html[data-theme="dark"] .role-list li,
+html[data-theme="dark"] .act-org {
+  color: var(--muted);
+}
+html[data-theme="dark"] .row-main::before,
+html[data-theme="dark"] .row-side,
+html[data-theme="dark"] .home-sub,
+html[data-theme="dark"] .cv-when,
+html[data-theme="dark"] .cv-org,
+html[data-theme="dark"] .act-side,
+html[data-theme="dark"] .act-note {
+  color: var(--faint);
+}
+html[data-theme="dark"] .role-list {
+  border-left-color: var(--line);
+}
+html[data-theme="dark"] .home-cta {
+  border-color: var(--line);
+  background: var(--surface);
+  box-shadow: none;
+  color: var(--strong) !important;
+}
+html[data-theme="dark"] .home-cta:hover {
+  border-color: var(--accent-line);
+  background: var(--surface-2);
+}
+html[data-theme="dark"] .home-cta--primary {
+  border-color: transparent;
+  background: #3a4fc4;
+  color: #fff !important;
+}
+html[data-theme="dark"] .home-cta--primary:hover {
+  background: #4a5fd6;
+}
+html[data-theme="dark"] .row-file {
+  border-color: var(--accent-line);
+  color: var(--accent) !important;
+}
+html[data-theme="dark"] .row-file:hover {
+  background: var(--accent-soft);
+}
+
+/* ── 교육·활동 ── */
+html[data-theme="dark"] .act-list,
+html[data-theme="dark"] .blog-list {
+  border-top-color: var(--muted);
+}
+html[data-theme="dark"] .act-list li {
+  border-bottom-color: var(--line);
+}
+
+/* ── 글 목록 ── */
+html[data-theme="dark"] .blog-list li a {
+  border-bottom-color: var(--line);
+}
+html[data-theme="dark"] .blog-list img {
+  border-color: var(--line);
+}
+html[data-theme="dark"] .blog-tag {
+  border-left-color: var(--line);
+  color: var(--muted);
+}
+html[data-theme="dark"] .blog-head time,
+html[data-theme="dark"] .blog-heading span {
+  color: var(--faint);
+}
+html[data-theme="dark"] .blog-text p,
+html[data-theme="dark"] .blog-noresult,
+html[data-theme="dark"] .blog-empty {
+  color: var(--muted);
+}
+html[data-theme="dark"] .blog-noresult,
+html[data-theme="dark"] .blog-empty {
+  border-bottom-color: var(--line);
+}
+html[data-theme="dark"] .blog-search i,
+html[data-theme="dark"] .blog-search kbd {
+  color: var(--faint);
+}
+html[data-theme="dark"] .blog-search input,
+html[data-theme="dark"] .blog-search input:focus,
+html[data-theme="dark"] .blog-search kbd {
+  background: var(--surface);
+  color: var(--text);
+}
+html[data-theme="dark"] .blog-search input::placeholder {
+  color: var(--faint);
+}
+html[data-theme="dark"] .blog-side h2 {
+  color: var(--muted);
+}
+html[data-theme="dark"] .folders .filter {
+  color: var(--text);
+}
+html[data-theme="dark"] .folders .filter.sub {
+  color: var(--muted);
+}
+html[data-theme="dark"] .folders .filter:hover,
+html[data-theme="dark"] .folder-toggle:hover,
+html[data-theme="dark"] .blog-pager button:hover:not(:disabled) {
+  background: var(--surface-2);
+}
+html[data-theme="dark"] .folders .filter span,
+html[data-theme="dark"] .folder-toggle,
+html[data-theme="dark"] .blog-filter button span {
+  color: var(--faint);
+}
+html[data-theme="dark"] .folder-toggle:hover {
+  color: var(--accent);
+}
+html[data-theme="dark"] .folders .filter.is-active {
+  background: var(--surface);
+  box-shadow: inset 0 0 0 1px var(--line);
+  color: var(--strong);
+}
+html[data-theme="dark"] .folders .filter.is-active span {
+  color: var(--muted);
+}
+html[data-theme="dark"] .blog-filter button {
+  border-color: var(--line);
+  background: transparent;
+  color: var(--text);
+}
+html[data-theme="dark"] .blog-filter button.is-active {
+  border-color: transparent;
+  background: #3a4fc4;
+  color: #fff;
+}
+html[data-theme="dark"] .blog-filter button.is-active span {
+  color: rgba(255, 255, 255, 0.75);
+}
+html[data-theme="dark"] .tag-more-toggle {
+  color: var(--accent);
+}
+html[data-theme="dark"] .blog-pager button {
+  color: var(--muted);
+}
+html[data-theme="dark"] .blog-pager button.is-current {
+  background: #3a4fc4;
+  color: #fff;
+}
+html[data-theme="dark"] .blog-pager button:disabled {
+  color: var(--line);
+}
+
+/* ── 글 본문 ── */
+html[data-theme="dark"] .intro-header .page-heading .page-subheading,
+html[data-theme="dark"] .intro-header .post-heading .post-subheading {
+  color: var(--muted);
+}
+html[data-theme="dark"] .post-meta,
+html[data-theme="dark"] .post-heading .post-meta {
+  color: var(--faint);
+}
+html[data-theme="dark"] .blog-tags a,
+html[data-theme="dark"] .tag-btn {
+  border-color: var(--line) !important;
+  color: var(--text) !important;
+}
+html[data-theme="dark"] .blog-post img {
+  border-color: var(--line);
+}
+html[data-theme="dark"] .blog-post th,
+html[data-theme="dark"] .blog-post td {
+  border-bottom-color: var(--line);
+}
+html[data-theme="dark"] .blog-post th {
+  border-bottom-color: var(--muted);
+}
+html[data-theme="dark"] blockquote,
+html[data-theme="dark"] .blog-post blockquote {
+  border-left-color: var(--line);
+  color: var(--muted);
+}
+html[data-theme="dark"] ul.pagination.blog-pager {
+  border-top-color: var(--line);
+}
+html[data-theme="dark"] .pagination .page-link {
+  color: var(--text) !important;
+}
+html[data-theme="dark"] .pagination .page-link:hover {
+  color: var(--accent) !important;
+}
+
+/* ── 코드: 인라인 코드와 코드 블록, 구문 강조 색 ── */
+html[data-theme="dark"] code {
+  background-color: var(--surface-2);
+  color: #f0a6bd;
+}
+html[data-theme="dark"] pre code {
+  background-color: transparent;
+  color: var(--text);
+}
+html[data-theme="dark"] pre,
+html[data-theme="dark"] .highlight > pre {
+  background-color: var(--surface);
+  background-image: none;
+  border-color: var(--line);
+  border-left-color: var(--faint);
+  color: var(--text);
+}
+html[data-theme="dark"] .highlight pre.lineno {
+  color: var(--faint);
+  border-right-color: var(--line);
+}
+html[data-theme="dark"] .highlight .c,
+html[data-theme="dark"] .highlight .cm,
+html[data-theme="dark"] .highlight .c1,
+html[data-theme="dark"] .highlight .cs,
+html[data-theme="dark"] .highlight .cp,
+html[data-theme="dark"] .highlight .ch,
+html[data-theme="dark"] .highlight .cpf { color: #7d8597; }
+html[data-theme="dark"] .highlight .k,
+html[data-theme="dark"] .highlight .kc,
+html[data-theme="dark"] .highlight .kd,
+html[data-theme="dark"] .highlight .kn,
+html[data-theme="dark"] .highlight .kp,
+html[data-theme="dark"] .highlight .kr,
+html[data-theme="dark"] .highlight .kt,
+html[data-theme="dark"] .highlight .ow { color: #ff8f8f; }
+html[data-theme="dark"] .highlight .o { color: var(--text); }
+html[data-theme="dark"] .highlight .s,
+html[data-theme="dark"] .highlight .sb,
+html[data-theme="dark"] .highlight .sc,
+html[data-theme="dark"] .highlight .sd,
+html[data-theme="dark"] .highlight .s1,
+html[data-theme="dark"] .highlight .s2,
+html[data-theme="dark"] .highlight .se,
+html[data-theme="dark"] .highlight .sh,
+html[data-theme="dark"] .highlight .si,
+html[data-theme="dark"] .highlight .sx,
+html[data-theme="dark"] .highlight .sr,
+html[data-theme="dark"] .highlight .ss { color: #a5d6a7; }
+html[data-theme="dark"] .highlight .m,
+html[data-theme="dark"] .highlight .mf,
+html[data-theme="dark"] .highlight .mh,
+html[data-theme="dark"] .highlight .mi,
+html[data-theme="dark"] .highlight .mo,
+html[data-theme="dark"] .highlight .il { color: #f2c66d; }
+html[data-theme="dark"] .highlight .nf,
+html[data-theme="dark"] .highlight .fm,
+html[data-theme="dark"] .highlight .nc,
+html[data-theme="dark"] .highlight .nn,
+html[data-theme="dark"] .highlight .ne { color: #b4a7ff; }
+html[data-theme="dark"] .highlight .nb,
+html[data-theme="dark"] .highlight .bp,
+html[data-theme="dark"] .highlight .nt,
+html[data-theme="dark"] .highlight .na,
+html[data-theme="dark"] .highlight .no,
+html[data-theme="dark"] .highlight .nd { color: #79c0ff; }
+html[data-theme="dark"] .highlight .n,
+html[data-theme="dark"] .highlight .nv,
+html[data-theme="dark"] .highlight .vc,
+html[data-theme="dark"] .highlight .vg,
+html[data-theme="dark"] .highlight .vi,
+html[data-theme="dark"] .highlight .nx,
+html[data-theme="dark"] .highlight .p { color: var(--text); }
+html[data-theme="dark"] .highlight .gd { color: #ffb4b4; background-color: rgba(255, 90, 90, 0.15); }
+html[data-theme="dark"] .highlight .gi { color: #b4f0b4; background-color: rgba(90, 200, 90, 0.15); }
+html[data-theme="dark"] .highlight .gp,
+html[data-theme="dark"] .highlight .go,
+html[data-theme="dark"] .highlight .gh { color: var(--muted); }
+html[data-theme="dark"] .highlight .err { color: #ffb4b4; background-color: transparent; }
+
+/* ── 테마 바꾸기 버튼 (두 테마 공통) ── */
+.theme-toggle {
+  display: grid;
+  place-items: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  margin-left: 0.5rem;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  color: #000;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+.theme-toggle:hover {
+  border-color: rgba(27, 44, 143, 0.15);
+  color: #1b2c8f;
+}
+.theme-toggle:focus-visible {
+  outline: 2px solid #1b2c8f;
+  outline-offset: 2px;
+}
+/* 밝은 테마에서는 달(어둡게 하기), 다크에서는 해(밝게 하기) */
+.theme-toggle .fa-sun,
+html[data-theme="dark"] .theme-toggle .fa-moon {
+  display: none;
+}
+html[data-theme="dark"] .theme-toggle .fa-sun {
+  display: inline-block;
+}
+html[data-theme="dark"] .theme-toggle {
+  color: var(--strong);
+}
+html[data-theme="dark"] .theme-toggle:hover {
+  border-color: var(--line);
+  color: var(--accent);
+}
+html[data-theme="dark"] .theme-toggle:focus-visible {
+  outline-color: var(--accent);
+}
+/* 메뉴가 접히는 좁은 화면: 버튼을 햄버거 왼쪽에 둔다 */
+@media (max-width: 1199.98px) {
+  .navbar-custom .theme-toggle {
+    order: 1;
+    margin-left: auto;
+    margin-right: 0.5rem;
+  }
+  .navbar-custom .navbar-toggler {
+    order: 2;
+  }
+  .navbar-custom .navbar-collapse {
+    order: 3;
+  }
+}
