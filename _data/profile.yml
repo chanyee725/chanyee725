@@ -21,6 +21,10 @@ activities:
     note: 후배 대상 PCL(Point Cloud Library) 강의
     org: 부산소프트웨어마이스터고등학교
     period: 2025.12.29
+  - title: 졸업작품전 참가
+    org: 부산항국제전시컨벤션센터(BPEX)
+    note: 졸업 작품 전시
+    period: 2024.07.04
   - title: 소프트웨이브(SoftWave) 2023 · Exhibitor
     note: 의료용 스마트미러 서비스 소개 및 시연
     period: 2023.11.30
@@ -28,10 +32,8 @@ activities:
     org: NUS SCALE, National University of Singapore
     period: 2023.09.04 – 2023.09.07
     file: /assets/files/nus-stem-leaders.pdf
-  - title: SW 중등해커톤
-    note: YOLO 차량 인식을 지하차도 침수 경보 시스템으로 확장
-    period: 2023.08
   - title: 부산직업교육박람회 참가
+    org: 벡스코(BEXCO)
     note: 프로젝트 소개 및 시연
     period: 2023.07.12
 
