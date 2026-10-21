@@ -1,0 +1,53 @@
+---
+// 글 아래 이전·다음: 상자 없이 얇은 선 하나와 글자만
+const { prev, next } = Astro.locals.starlightRoute.pagination
+---
+
+{
+  (prev || next) && (
+    <nav class="pager" aria-label="이전·다음 글">
+      {prev ? (
+        <a href={prev.href} rel="prev">
+          <span>← 이전 글</span>
+          {prev.label}
+        </a>
+      ) : (
+        <span />
+      )}
+      {next && (
+        <a href={next.href} rel="next" class="next">
+          <span>다음 글 →</span>
+          {next.label}
+        </a>
+      )}
+    </nav>
+  )
+}
+
+<style>
+  .pager {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 3rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--sl-color-hairline);
+  }
+  a {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    color: var(--sl-color-gray-2);
+    text-decoration: none;
+  }
+  a:hover {
+    color: var(--sl-color-white);
+  }
+  span {
+    font-size: var(--sl-text-xs);
+    color: var(--sl-color-gray-3);
+  }
+  .next {
+    text-align: right;
+  }
+</style>

@@ -18,6 +18,7 @@ export default defineConfig({
         PageTitle: "./src/components/PageTitle.astro",
         PageSidebar: "./src/components/PageSidebar.astro",
         ThemeSelect: "./src/components/ThemeToggle.astro",
+        Pagination: "./src/components/Pagination.astro",
       },
       routeMiddleware: "./src/route-data.ts",
       sidebar: CATEGORIES.map((c) => ({ label: c.label, items: [{ autogenerate: { directory: c.dir } }] })),
