@@ -1,0 +1,23 @@
+/* 글꼴 하나, 무채색 + 강조 한 가지 */
+:root {
+  --sl-font: "IBM Plex Sans KR", system-ui, sans-serif;
+  --sl-text-h2: 1.5rem;
+  --sl-text-h3: 1.2rem;
+  --sl-color-accent-low: #2b2a20;
+  --sl-color-accent: #d9d9d4;
+  --sl-color-accent-high: #ffffff;
+}
+:root[data-theme="light"] {
+  --sl-color-accent-low: #f4efd2;
+  --sl-color-accent: #3a3a36;
+  --sl-color-accent-high: #1c1c1a;
+}
+/* 사이드바의 카테고리 이름은 조금 진하게 */
+.sidebar-content .large {
+  font-weight: 600;
+}
+/* 본문 강조(==형광펜==)는 노란 밑줄 하나만 */
+.sl-markdown-content mark {
+  background: linear-gradient(transparent 55%, #f4d64e 55%);
+  color: inherit;
+}

@@ -1,0 +1,33 @@
+---
+import Default from "@astrojs/starlight/components/PageTitle.astro"
+
+import { CATEGORY_LABEL, formatDate } from "../categories"
+
+const { entry } = Astro.locals.starlightRoute
+const { date } = entry.data
+const category = CATEGORY_LABEL[entry.id.split("/")[0]]
+---
+
+<Default />
+{
+  date && (
+    <p class="post-meta">
+      {category && <span>{category}</span>}
+      <time datetime={date.toISOString()}>{formatDate(date)}</time>
+    </p>
+  )
+}
+
+<style>
+  .post-meta {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+    color: var(--sl-color-gray-3);
+    font-size: var(--sl-text-sm);
+  }
+  .post-meta span + time::before {
+    content: "·";
+    margin-right: 0.75rem;
+  }
+</style>
