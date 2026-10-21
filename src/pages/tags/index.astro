@@ -1,0 +1,36 @@
+---
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro"
+
+import { getPosts, tagCounts, tagHref } from "../../posts"
+
+const tags = tagCounts(await getPosts())
+---
+
+<StarlightPage frontmatter={{ title: "태그", tableOfContents: false, prev: false, next: false }}>
+  <ul class="all-tags">
+    {
+      tags.map(([tag, n]) => (
+        <li>
+          <a href={tagHref(tag)}>#{tag}</a> <span>{n}</span>
+        </li>
+      ))
+    }
+  </ul>
+</StarlightPage>
+
+<style>
+  .all-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.25rem;
+    padding: 0;
+    list-style: none;
+  }
+  .all-tags a {
+    text-decoration: none;
+  }
+  .all-tags span {
+    color: var(--sl-color-gray-3);
+    font-size: var(--sl-text-sm);
+  }
+</style>

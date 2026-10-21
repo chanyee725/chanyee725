@@ -1,0 +1,40 @@
+---
+// 홈 오른쪽: 전체 태그와 글 수
+import { getPosts, tagCounts, tagHref } from "../posts"
+
+const tags = tagCounts(await getPosts())
+---
+
+<h2>태그</h2>
+<ul class="tags">
+  {
+    tags.map(([tag, n]) => (
+      <li>
+        <a href={tagHref(tag)}>
+          #{tag}
+          <span>{n}</span>
+        </a>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.9rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  .tags a {
+    display: inline !important;
+    font-size: var(--sl-text-sm) !important;
+  }
+  .tags span {
+    margin-left: 0.15rem;
+    color: var(--sl-color-gray-4);
+    font-size: var(--sl-text-xs);
+  }
+</style>

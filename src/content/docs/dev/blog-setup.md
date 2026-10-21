@@ -1,6 +1,7 @@
 ---
 title: 이 블로그를 만든 방법
 date: 2026-10-21
+tags: [블로그, astro]
 thumbnail: /thumbnails/blog-setup.svg
 ---
 

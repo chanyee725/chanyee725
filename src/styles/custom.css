@@ -1,6 +1,6 @@
 /* 글꼴 하나, 무채색 + 강조 한 가지 */
 :root {
-  --sl-font: "IBM Plex Sans KR", system-ui, sans-serif;
+  --sl-font: "Pretendard Variable", Pretendard, system-ui, sans-serif;
   --sl-text-h2: 1.5rem;
   --sl-text-h3: 1.2rem;
   --sl-color-accent-low: #2b2a20;
