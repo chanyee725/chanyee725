@@ -86,6 +86,8 @@ exclude:
   - templates/
   - vendor/
   - _config.dev.yml
+  - vercel.json
+  - scripts/
 
 plugins:
   - jekyll-paginate
