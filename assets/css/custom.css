@@ -783,7 +783,7 @@ body:has(.activities) .intro-header {
 }
 .navbar-custom .navbar-brand,
 .navbar-custom .nav-link {
-  color: #1f2a44 !important;
+  color: #000 !important;
 }
 .navbar-custom .nav-link:hover {
   color: #1b2c8f !important;
