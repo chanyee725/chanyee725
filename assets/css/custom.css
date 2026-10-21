@@ -1,125 +1,157 @@
-/* 공부 기록 — Beautiful Jekyll 위에 얹는 스타일. 글꼴 하나(Pretendard), 무채색 + 파란 링크 하나 */
+/* AI Robotics Researcher — Beautiful Jekyll 위에 얹는 스타일.
+   글꼴은 Pretendard 하나(라틴 글자는 Inter 기반). 테마 기본 글꼴(Lora, Open Sans)은 불러오지 않는다. */
 
-/* 전체 Pretendard. 아이콘 폰트(Font Awesome)와 코드만 제외 */
 body,
 body *:not(code):not(pre):not(kbd):not(samp):not(.fa):not(.fas):not(.far):not(.fab):not([class*="fa-"]) {
   font-family: "Pretendard Variable", Pretendard, system-ui, sans-serif !important;
 }
 
 body {
-  font-size: 17px;
-  line-height: 1.75;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #404040;
   word-break: keep-all;
 }
 
-/* 위쪽 메뉴: 얇은 선 하나, 굵기만 살짝 */
-.navbar-custom .navbar-brand,
-.navbar-custom .nav-link {
+h1,
+h2,
+h3,
+h4 {
   font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #404040;
+}
+
+/* ── 위쪽 메뉴 ── */
+.navbar-custom .navbar-brand {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+.navbar-custom .nav-link {
+  font-size: 15px;
+  font-weight: 700;
   letter-spacing: 0;
   text-transform: none;
 }
 
-/* 페이지 제목: 대문자·기울임 없이 */
-.intro-header .page-heading h1,
-.intro-header .post-heading h1 {
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-.intro-header .page-heading .page-subheading,
-.intro-header .post-heading .post-subheading {
-  font-weight: 400;
-  font-style: normal;
-  color: #666;
-}
-
-/* 첫 화면 소개 */
-.intro {
+/* ── 첫 화면 ── */
+.home {
+  max-width: 750px;
+  margin: 0 auto;
+  padding-top: 2rem;
   text-align: center;
 }
-.mission-label {
+.home-name {
+  margin: 0.5rem 0 1.75rem;
+  font-size: 36px;
+}
+.home-label {
   margin: 0;
-  font-size: 0.8rem;
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.08em;
-  color: #2557d6;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #1b2c8f;
 }
-.mission {
-  margin: 0.25rem 0 1.25rem;
-  font-size: 1.3rem;
+.home-mission {
+  margin: 0.4rem 0 0.75rem;
+  font-size: 22px;
   font-weight: 600;
+  color: #1f2a44;
 }
-.intro-buttons {
+.home-role {
+  display: inline-block;
+  margin: 0 0 1.5rem;
+  padding: 0.3rem 0.9rem;
+  border: 1px solid #d9def2;
+  border-radius: 999px;
+  background: #f4f6fc;
+  font-size: 15px;
+  color: #33416b;
+}
+.home-role i {
+  margin-right: 0.3rem;
+  color: #1b2c8f;
+}
+.home-ctas {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.6rem;
   margin-bottom: 2rem;
 }
-.intro-buttons a {
-  min-width: 7rem;
-  padding: 0.5rem 1.1rem;
-  border-radius: 6px;
+.home-cta {
+  min-width: 8.5rem;
+  padding: 10px 15px;
+  border: 1px solid #1b2c8f;
+  border-radius: 7px;
   font-weight: 600;
-  text-decoration: none;
+  color: #1b2c8f !important;
+  text-decoration: none !important;
 }
-.btn-solid {
-  background: #1f2a5a;
-  border: 1px solid #1f2a5a;
+.home-cta i {
+  margin-right: 0.35rem;
+}
+.home-cta--primary {
+  background: #1b2c8f;
   color: #fff !important;
 }
-.btn-line {
-  border: 1px solid #1f2a5a;
-  color: #1f2a5a !important;
+.home-cta:hover {
+  opacity: 0.88;
 }
-.btn-solid:hover,
-.btn-line:hover {
-  opacity: 0.85;
-}
-.intro-text {
+.home-bio {
   text-align: left;
 }
-.recent-title {
-  margin: 2.5rem 0 0;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid #222;
+.home-bio p {
+  margin: 0 0 1.25rem;
+}
+.home-section {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #eee;
   text-align: left;
-  font-size: 1rem;
-  font-weight: 400;
-  color: #555;
 }
-
-/* 글 목록(첫 화면): 썸네일은 오른쪽 작은 사각형 */
-.post-preview {
-  padding: 1.25rem 0;
-  border-bottom: 1px solid #eee;
+.home-section h2 {
+  margin: 0 0 0.6rem;
+  font-size: 30px;
 }
-.post-preview .post-title {
-  font-size: 1.25rem;
-  font-weight: 700;
+.home-section ul {
+  margin: 0;
+  padding-left: 1.25rem;
 }
-.post-preview .post-meta {
-  font-style: normal;
-  font-size: 0.9rem;
+.home-section li {
+  margin: 0.15rem 0;
+}
+.home-section b {
+  color: #1b2c8f;
+  font-weight: 600;
+}
+.home-sub {
+  margin-left: 0.35rem;
+  font-size: 0.9em;
   color: #888;
 }
-.post-preview .post-image,
-.post-preview .post-image-small {
-  width: 8.5rem;
-  height: 5.75rem;
-  border-radius: 6px;
-  overflow: hidden;
+
+/* ── 글 화면·페이지 제목: 테마의 큰 제목을 줄인다 ── */
+.intro-header .page-heading h1,
+.intro-header .post-heading h1 {
+  font-size: 36px;
+  font-weight: 600;
 }
-.post-preview .post-image img,
-.post-preview .post-image-small img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 6px;
+.intro-header .page-heading .page-subheading,
+.intro-header .post-heading .post-subheading {
+  font-style: normal;
+  font-weight: 400;
+  color: #666;
 }
-.post-preview .post-image:hover {
-  filter: none;
-  transform: none;
+.intro-header .page-heading hr.small {
+  display: none;
+}
+.post-heading .post-meta,
+.post-meta {
+  font-style: normal;
+  color: #888;
 }
 
 /* 태그 버튼: 색 배경 대신 테두리만 */
@@ -141,7 +173,7 @@ body {
   outline: none;
 }
 .post-index input:focus {
-  border-color: #2557d6;
+  border-color: #1b2c8f;
 }
 .post-count {
   margin: 0.5rem 0 1rem;
@@ -175,18 +207,7 @@ body {
   text-align: left;
 }
 
-.not-found {
-  padding: 4rem 0;
-}
-
-.post-preview .post-read-more {
-  font-weight: 400;
-  font-size: 0.9rem;
-  color: #2557d6;
-}
-
 /* 글 아래 이전·다음: 상자 없이 글자만 */
-.blog-post ~ .pagination,
 ul.pagination.blog-pager {
   border-top: 1px solid #eee;
   padding-top: 1.25rem;
@@ -201,56 +222,18 @@ ul.pagination.blog-pager {
   letter-spacing: 0;
 }
 .pagination .page-link:hover {
-  color: #2557d6 !important;
+  color: #1b2c8f !important;
 }
 
-.post-heading .post-meta {
-  font-style: normal;
-  color: #888;
+.not-found {
+  padding: 4rem 0;
 }
 
-/* 첫 화면 수상·자격증: 두 칸, 휴대폰에서는 한 칸 */
-.profile-lists {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  margin-top: 2.5rem;
-  text-align: left;
-}
-.list-title {
-  margin: 0 0 0.25rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid #222;
-  font-size: 1rem;
-  font-weight: 400;
-  color: #555;
-}
-.cv-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.cv-list li {
-  display: flex;
-  flex-direction: column;
-  padding: 0.55rem 0;
-  border-bottom: 1px solid #eee;
-}
-.cv-main {
-  font-weight: 500;
-}
-.cv-main b {
-  margin-left: 0.25rem;
-  color: #2557d6;
-  font-weight: 600;
-}
-.cv-sub {
-  font-size: 0.85rem;
-  color: #888;
-}
 @media (max-width: 640px) {
-  .profile-lists {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+  .home-name {
+    font-size: 30px;
+  }
+  .home-mission {
+    font-size: 19px;
   }
 }
