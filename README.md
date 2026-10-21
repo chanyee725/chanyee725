@@ -17,6 +17,7 @@ Jekyll + [Beautiful Jekyll](https://beautifuljekyll.com) 6.0.1 (MIT, see `LICENS
 - New post: copy `templates/post.md` to `_posts/YYYY-MM-DD-name.md` and fill in `title`, `excerpt`, `category`, `tags` (optional `thumbnail-img` from `assets/img/`).
 - Post metadata: `category` = area (Robotics, Hardware, OS, 트러블슈팅), `series` = part inside it (Gazebo, Isaac Sim), `tags` = lowercase-hyphen tech keywords (`isaac-sim`, `ros2`), at most 5 per post. Run `python3 scripts/tags.py` to list tags and catch near-duplicates before committing.
 - Profile, education, career and awards: `_data/profile.yml`.
+- Setup (once): `./scripts/setup.sh` installs Ruby in the `jekyll` conda env and the gems into `vendor/bundle`.
 - Local preview: `./scripts/serve.sh` → http://localhost:4000/ (restart after editing `_config.yml`).
 - Styles: `assets/css/custom.css`. When a domain is connected, set `url` in `_config.yml`.
 
