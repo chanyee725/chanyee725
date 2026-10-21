@@ -5,10 +5,12 @@ nav-short: true
 show-avatar: false
 ---
 
-{% comment %} 블로그 목록: 왼쪽 글 목록(제목 | 태그 · 날짜 · 두 줄 요약 · 썸네일), 오른쪽 태그 사이드바 {% endcomment %}
+{% comment %} 블로그 목록: 왼쪽 글 목록(제목 | 태그 · 날짜 · 두 줄 요약 · 썸네일), 오른쪽 사이드바(분류 폴더 → 태그) {% endcomment %}
 
 {%- capture tag_names -%}{%- for t in site.tags -%}{{ t[0] }}{%- unless forloop.last -%},{%- endunless -%}{%- endfor -%}{%- endcapture -%}
 {%- assign tag_list = tag_names | split: ',' | sort -%}
+{%- capture cat_names -%}{%- for c in site.categories -%}{{ c[0] }}{%- unless forloop.last -%},{%- endunless -%}{%- endfor -%}{%- endcapture -%}
+{%- assign cat_list = cat_names | split: ',' | sort -%}
 
 <div class="blog">
   <div class="blog-main">
@@ -35,8 +37,26 @@ show-avatar: false
     </ul>
   </div>
 
-  <aside class="blog-side" aria-label="태그">
-    <h2>태그</h2>
+  <aside class="blog-side" aria-label="분류와 태그">
+    <h2>분류</h2>
+    <div class="folders">
+      {% for c in cat_list %}
+      <details open>
+        <summary>
+          <i class="fas fa-folder folder-closed" aria-hidden="true"></i>
+          <i class="fas fa-folder-open folder-open" aria-hidden="true"></i>
+          {{ c }} <span>{{ site.categories[c].size }}</span>
+        </summary>
+        <ul>
+          {% for post in site.categories[c] %}
+          <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </details>
+      {% endfor %}
+    </div>
+
+    <h2 class="side-tags">태그</h2>
     <nav class="blog-filter">
       <button type="button" class="is-active" data-tag="">전체 <span>{{ site.posts.size }}</span></button>
       {% for t in tag_list %}

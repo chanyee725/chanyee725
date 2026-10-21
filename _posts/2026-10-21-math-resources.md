@@ -1,6 +1,7 @@
 ---
 title: 수학 공부 자료
 excerpt: SmolVLA를 돌리다 막히는 곳을 기준으로 고른 선형대수·역전파 자료.
+category: 수학
 tags: [수학, 자료]
 ---
 

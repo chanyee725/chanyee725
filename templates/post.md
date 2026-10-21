@@ -1,6 +1,7 @@
 ---
 title: 제목
 excerpt: 목록에 보일 한 줄 요약
+category: 일지
 tags: [VLA]
 # thumbnail-img: /assets/img/파일명.png
 ---

@@ -1,6 +1,7 @@
 ---
 title: 이 블로그를 만든 방법
 excerpt: Jekyll과 Beautiful Jekyll로 GitHub Pages에 기록용 블로그를 만든 과정.
+category: 개발
 tags: [개발, 블로그]
 thumbnail-img: /assets/img/blog-setup.svg
 ---

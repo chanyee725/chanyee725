@@ -5,7 +5,7 @@
 ## 글 쓰기
 
 1. `templates/post.md`를 `_posts/YYYY-MM-DD-이름.md`로 복사한다.
-2. 머리말의 `title`, `excerpt`(목록에 보일 한 줄), `tags`를 고친다. 썸네일은 `assets/img/`에 넣고 `thumbnail-img`에 경로를 적는다.
+2. 머리말의 `title`, `excerpt`(목록에 보일 한 줄), `category`(글 목록 오른쪽 폴더, 글 하나에 하나), `tags`를 고친다. 썸네일은 `assets/img/`에 넣고 `thumbnail-img`에 경로를 적는다.
 3. 위쪽 메뉴의 VLA · 논문 · 수학은 같은 이름의 태그로 모인다.
 
 ## 로컬 미리보기
