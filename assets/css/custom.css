@@ -321,3 +321,48 @@ ul.pagination.blog-pager {
     flex-basis: auto;
   }
 }
+
+/* 글 목록(블로그): 제목·날짜·요약·태그, 썸네일은 오른쪽 작은 사각형 */
+.posts-list {
+  max-width: 750px;
+  margin: 0 auto;
+}
+.post-preview {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid #eee;
+}
+.post-preview .post-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.post-preview .post-meta {
+  font-size: 0.9rem;
+  font-style: normal;
+  color: #888;
+}
+.post-preview .post-entry {
+  color: #555;
+}
+.post-preview .post-image,
+.post-preview .post-image-small {
+  width: 8.5rem;
+  height: 5.75rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.post-preview .post-image img,
+.post-preview .post-image-small img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.post-preview .post-image:hover {
+  filter: none;
+  transform: none;
+}
+.post-preview .post-read-more {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #1b2c8f;
+}
