@@ -581,7 +581,7 @@ body:has(.blog) .blog {
 .folders .filter i {
   width: 1rem;
   font-size: 0.85rem;
-  color: #8a94c4;
+  color: #e0a63a;
 }
 .folders .filter span {
   margin-left: auto;
@@ -600,7 +600,7 @@ body:has(.blog) .blog {
   color: #1b2c8f;
 }
 .folders .filter.is-active i {
-  color: #1b2c8f;
+  color: #c98a16;
 }
 .blog-side h2.side-tags {
   margin-top: 0;
