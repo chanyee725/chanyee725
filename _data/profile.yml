@@ -17,13 +17,13 @@ career:
 
 # activities: 교육·연수·활동 (/activities 페이지). title(이름), org(기관), period(기간), file(수료증 PDF, assets/files/ 기준)
 activities:
+  - title: 소프트웨이브(SoftWave) 2023 · Exhibitor
+    note: 의료용 스마트미러 서비스 소개 및 시연
+    period: 2023.11.30
   - title: STEM Leaders Programme
     org: NUS SCALE, National University of Singapore
     period: 2023.09.04 – 2023.09.07
     file: /assets/files/nus-stem-leaders.pdf
-  - title: 소프트웨이브(SoftWave) 참가
-    note: 의료용 스마트미러 서비스 소개 및 시연
-    period:
   - title: 부산직업교육박람회 참가
     note: 프로젝트 소개 및 시연
     period:
