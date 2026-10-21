@@ -1043,7 +1043,7 @@ footer .fa-stack .fa-circle {
   padding: 0 2.2rem 0 2.1rem;
   border: 1px solid var(--panel-line);
   border-radius: 999px;
-  background: var(--panel);
+  background: #fff;
   font-size: 0.9rem;
   color: #2a2a2a;
   outline: none;
@@ -1082,86 +1082,6 @@ footer .fa-stack .fa-circle {
   color: #888;
 }
 
-/* 사이드바: 옅은 남색 판 위에 분류와 태그 */
-.blog-side {
-  padding: 1.1rem 0.9rem 1.2rem;
-  border: 1px solid var(--panel-line);
-  border-radius: 14px;
-  background: var(--panel);
-}
-.blog-side h2 {
-  padding-left: 0.4rem;
-  font-size: 13px !important;
-  font-weight: 600;
-  color: #6b7290 !important;
-}
-
-/* 폴더 */
-.folders .filter {
-  color: #3a4060;
-  transition: background 0.12s ease, color 0.12s ease;
-}
-.folders .filter i {
-  color: var(--folder);
-}
-.folders .filter:hover {
-  background: #fff;
-  color: var(--ink);
-}
-.folders .filter.is-active {
-  background: #fff;
-  color: var(--ink);
-  font-weight: 600;
-  box-shadow: inset 3px 0 0 var(--ink), 0 1px 2px rgba(27, 44, 143, 0.06);
-}
-.folders .filter.is-active i {
-  color: var(--folder-open);
-}
-.folders .filter span {
-  color: #a3a8bb;
-}
-.folders .filter.is-active span {
-  color: var(--ink);
-}
-.folders .filter.sub {
-  color: #5a6080;
-}
-.folders .filter.sub i {
-  color: #e9c27a;
-}
-.folder-toggle {
-  color: #a3a8bb;
-}
-.folder-toggle:hover {
-  background: #fff;
-  color: var(--ink);
-}
-
-/* 태그 */
-.blog-filter button {
-  border-color: var(--panel-line);
-  background: #fff;
-  color: #4a5170;
-  transition: background 0.12s ease, border-color 0.12s ease, color 0.12s ease;
-}
-.blog-filter button:hover {
-  border-color: var(--ink-line);
-  background: var(--ink-soft);
-  color: var(--ink);
-}
-.blog-filter button:hover span {
-  color: var(--ink);
-}
-.blog-filter button.is-active {
-  border-color: transparent;
-  background: var(--ink);
-  color: #fff;
-}
-.tag-more-toggle {
-  padding-left: 0.4rem;
-  color: var(--ink);
-}
-
 /* 목록 줄에 마우스를 올리면 아주 옅게 */
 .blog-list li a {
   transition: background 0.12s ease;
@@ -1172,8 +1092,6 @@ footer .fa-stack .fa-circle {
 
 @media (prefers-reduced-motion: reduce) {
   .blog-search input,
-  .folders .filter,
-  .blog-filter button,
   .blog-list li a {
     transition: none;
   }
@@ -1181,5 +1099,41 @@ footer .fa-stack .fa-circle {
 @media (max-width: 640px) {
   .blog-search {
     flex-basis: 100%;
+  }
+}
+
+/* 글 줄 높이를 사진 유무와 상관없이 같게: 제목은 한 줄로 자르고, 줄 높이는 '제목 + 요약 두 줄'(4.875rem)에
+   맞춰 고정, 내용은 세로 가운데. 그래야 쪽마다 쪽 번호 위치가 같다. */
+.blog-list li a {
+  min-height: calc(4.875rem + 1.5rem + 1px);
+  padding: 0.75rem 0;
+  align-items: center;
+}
+.blog-list img {
+  width: 6.75rem;
+}
+.blog-head {
+  flex-wrap: nowrap;
+}
+.blog-title {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.blog-tag,
+.blog-head time {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.blog-text p {
+  line-height: 1.5;
+}
+@media (max-width: 640px) {
+  .blog-head {
+    flex-wrap: wrap;
+  }
+  .blog-title {
+    white-space: normal;
   }
 }

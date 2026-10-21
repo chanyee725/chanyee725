@@ -147,6 +147,9 @@ show-avatar: false
         for (var i = 1; i <= pages; i++) add(String(i), i, { current: i === page })
         add("›", page + 1, { label: "다음 쪽" })
       }
+      // 마지막 쪽처럼 글이 6개보다 적어도 쪽 번호가 같은 자리에 오도록 6줄 높이를 비워 둔다
+      var first = list.querySelector("li:not([hidden])")
+      list.style.minHeight = pages > 1 && first ? first.getBoundingClientRect().height * PAGE + "px" : ""
       if (scroll) list.scrollIntoView({ block: "start" })
     }
 
