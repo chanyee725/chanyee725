@@ -12,7 +12,7 @@ navbar-links:
   글 목록: "posts"
 
 # 프로필 사진 (지금은 데모 그림. 실제 사진으로 바꿀 때 이 파일만 교체)
-avatar: "/assets/img/avatar.svg"
+avatar: "/assets/img/profile.jpg"
 round-avatar: true
 
 social-network-links:
