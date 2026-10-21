@@ -595,8 +595,13 @@ body:has(.blog) .blog {
 .folders .filter.is-active .folder-open {
   display: inline-block;
 }
+/* 고른 폴더: 배경은 흰색 그대로, 글자만 남색·굵게 (아이콘은 열린 폴더로 바뀐다) */
 .folders .filter.is-active {
-  background: #eef0fa;
+  background: transparent;
+  color: #1b2c8f;
+  font-weight: 700;
+}
+.folders .filter.is-active span {
   color: #1b2c8f;
 }
 .folders .filter.is-active i {
