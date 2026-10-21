@@ -126,8 +126,13 @@ h4 {
   pointer-events: none;
 }
 
-.home-bio {
-  text-align: left;
+/* 소개 글과 수상은 같은 폭(620px)으로 가운데 정렬 */
+.home-bio,
+.home-section {
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 .home-bio p {
   margin: 0 0 1.25rem;
@@ -136,7 +141,6 @@ h4 {
   margin-top: 1.5rem;
   padding-top: 1.25rem;
   border-top: 1px solid #eee;
-  text-align: left;
 }
 .home-section h2 {
   margin: 0 0 0.6rem;
@@ -144,7 +148,8 @@ h4 {
 }
 .home-section ul {
   margin: 0;
-  padding-left: 1.25rem;
+  padding: 0;
+  list-style: none;
 }
 .home-section li {
   margin: 0.15rem 0;
