@@ -766,3 +766,31 @@ body:has(.activities) .intro-header {
     align-items: center;
   }
 }
+
+/* ── 위·아래 바 색감: 맨 회색 대신 사이트의 남색 계열로 맞춘다 ── */
+/* 위쪽 메뉴: 반투명 흰색 + 흐림 (유리 버튼과 같은 결) */
+.navbar-custom {
+  background-color: rgba(255, 255, 255, 0.82) !important;
+  -webkit-backdrop-filter: saturate(160%) blur(12px);
+  backdrop-filter: saturate(160%) blur(12px);
+  border-bottom: 1px solid #e8eaf3 !important;
+}
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+  color: #1f2a44 !important;
+}
+.navbar-custom .nav-link:hover {
+  color: #1b2c8f !important;
+}
+/* 아래쪽 바: 남색이 아주 살짝 도는 밝은 바탕 */
+body > footer {
+  background-color: #f6f7fb !important;
+  border-top: 1px solid #e8eaf3 !important;
+}
+footer .copyright,
+footer .theme-by {
+  color: #8a90a8 !important;
+}
+footer .fa-stack .fa-circle {
+  color: #1f2a44;
+}
