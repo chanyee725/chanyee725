@@ -1,8 +1,8 @@
 ---
 title: 제목
-date: 2026-01-01
-tags: []
-# thumbnail: /thumbnails/파일명.png
+excerpt: 목록에 보일 한 줄 요약
+tags: [VLA]
+# thumbnail-img: /assets/img/파일명.png
 ---
 
 ## 한 일

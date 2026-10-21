@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+  <defs>
+    <pattern id="g" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M20 0H0V20" fill="none" stroke="#dcdcd6" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="300" height="200" fill="#f7f7f3"/>
+  <rect width="300" height="200" fill="url(#g)"/>
+  <rect x="40" y="88" width="206" height="14" fill="#f4d64e" opacity=".8"/>
+  <text x="40" y="100" font-family="sans-serif" font-size="22" font-weight="700" fill="#262624">Jekyll + GitHub Pages</text>
+  <text x="40" y="128" font-family="sans-serif" font-size="13" fill="#6b6b66">Beautiful Jekyll 6.0.1</text>
+</svg>

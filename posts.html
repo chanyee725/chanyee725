@@ -1,0 +1,35 @@
+---
+layout: page
+title: 글 목록
+---
+
+<div class="post-index">
+  <input type="search" id="post-filter" placeholder="제목으로 검색" aria-label="제목으로 검색">
+  <p class="post-count"><span id="post-shown">{{ site.posts.size }}</span>개 글</p>
+  <ol id="post-index-list">
+    {% for post in site.posts %}
+    <li data-title="{{ post.title | downcase | escape }}">
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: site.date_format }}</time>
+    </li>
+    {% endfor %}
+  </ol>
+</div>
+
+<script>
+  (function () {
+    var input = document.getElementById("post-filter")
+    var items = document.querySelectorAll("#post-index-list li")
+    var shown = document.getElementById("post-shown")
+    input.addEventListener("input", function () {
+      var q = input.value.trim().toLowerCase()
+      var n = 0
+      items.forEach(function (li) {
+        var hit = li.dataset.title.indexOf(q) !== -1
+        li.hidden = !hit
+        if (hit) n++
+      })
+      shown.textContent = n
+    })
+  })()
+</script>

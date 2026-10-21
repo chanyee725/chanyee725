@@ -1,0 +1,90 @@
+# 공부 기록 — Beautiful Jekyll 6.0.1 기반 (theme LICENSE: MIT, LICENSE 파일 참고)
+# 사이트 전체 설정. 글은 _posts/, 페이지는 루트의 .md/.html.
+
+title: 공부 기록
+author: 공부 기록
+baseurl: "/Docs"
+url: "https://chanyee725.github.io"
+
+# 위쪽 메뉴. 시리즈는 태그 페이지의 해당 태그로 연결한다.
+navbar-links:
+  VLA: "tags#VLA"
+  논문: "tags#논문"
+  수학: "tags#수학"
+  글 목록: "posts"
+
+# 사진·로고는 쓰지 않는다
+round-avatar: true
+
+social-network-links:
+  github: chanyee725
+  rss: true
+
+rss-description: 로봇 학습(VLA)을 공부하며 한 것과 배운 것
+
+share-links-active:
+  twitter: false
+  facebook: false
+  linkedin: false
+  vk: false
+
+excerpt_length: 60
+feed_show_excerpt: true
+feed_show_tags: true
+post_search: true
+edit_page_button: false
+
+# 색: 흰 바탕, 흑연색 글자, 링크는 차분한 파랑 하나
+navbar-var-length: false
+navbar-col: "#FFFFFF"
+navbar-text-col: "#222222"
+navbar-border-col: "#EAEAEA"
+page-col: "#FFFFFF"
+text-col: "#2A2A2A"
+link-col: "#2557D6"
+hover-col: "#173C99"
+footer-col: "#FFFFFF"
+footer-text-col: "#8A8A8A"
+footer-link-col: "#555555"
+footer-hover-col: "#173C99"
+
+site-css:
+  - "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+  - "/assets/css/custom.css"
+
+date_format: "%Y. %-m. %-d."
+timezone: "Asia/Seoul"
+lang: ko
+
+markdown: kramdown
+highlighter: rouge
+permalink: /:year/:month/:day/:title/
+paginate: 10
+
+kramdown:
+  input: GFM
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: false
+      social-share: false
+  - scope:
+      path: ""
+    values:
+      layout: "page"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - templates/
+  - vendor/
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
