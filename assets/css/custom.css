@@ -548,68 +548,57 @@ body:has(.blog) .blog {
   padding-top: 2rem;
 }
 
-/* 사이드바 분류: 폴더처럼 접고 펴기. 펴면 폴더가 열린 아이콘으로 바뀐다 */
+/* 사이드바 분류: 폴더 이름과 글 수만. 고른 폴더는 열린 아이콘과 진한 바탕 */
 .folders {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
   margin-bottom: 1.75rem;
 }
-.folders details {
-  margin-bottom: 0.15rem;
-}
-.folders summary {
+.folders .filter {
   display: flex;
   align-items: center;
-  gap: 0.45rem;
-  padding: 0.3rem 0.4rem;
-  border-radius: 6px;
-  list-style: none;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.4rem 0.55rem;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
   font-size: 0.92rem;
   font-weight: 500;
   color: #333;
+  text-align: left;
   cursor: pointer;
 }
-.folders summary::-webkit-details-marker {
-  display: none;
-}
-.folders summary:hover {
+.folders .filter:hover {
   background: #f3f4f8;
 }
-.folders summary:focus-visible {
+.folders .filter:focus-visible {
   outline: 2px solid #1b2c8f;
   outline-offset: 1px;
 }
-.folders summary i {
+.folders .filter i {
   width: 1rem;
   font-size: 0.85rem;
   color: #8a94c4;
 }
-.folders summary span {
+.folders .filter span {
   margin-left: auto;
   font-size: 0.78rem;
   color: #9aa0b4;
 }
 .folders .folder-open,
-.folders details[open] .folder-closed {
+.folders .filter.is-active .folder-closed {
   display: none;
 }
-.folders details[open] .folder-open {
+.folders .filter.is-active .folder-open {
   display: inline-block;
 }
-.folders ul {
-  margin: 0.1rem 0 0.4rem 0.95rem;
-  padding: 0 0 0 0.85rem;
-  border-left: 1px solid #e6e8f0;
-  list-style: none;
+.folders .filter.is-active {
+  background: #eef0fa;
+  color: #1b2c8f;
 }
-.folders li {
-  padding: 0.15rem 0;
-  font-size: 0.85rem;
-  line-height: 1.4;
-}
-.folders li a {
-  color: #666;
-  text-decoration: none;
-}
-.folders li a:hover {
+.folders .filter.is-active i {
   color: #1b2c8f;
 }
 .blog-side h2.side-tags {
