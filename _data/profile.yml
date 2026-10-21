@@ -15,12 +15,24 @@ career:
     org: 바질컴퍼니
     period: 2024.07 – 2024.10
 
-# activities: 교육·연수·활동. title(이름), org(기관), period(기간), file(수료증 PDF, assets/files/ 기준)
+# activities: 교육·연수·활동 (/activities 페이지). title(이름), org(기관), period(기간), file(수료증 PDF, assets/files/ 기준)
 activities:
   - title: STEM Leaders Programme
     org: NUS SCALE, National University of Singapore
     period: 2023.09.04 – 2023.09.07
     file: /assets/files/nus-stem-leaders.pdf
+  - title: 소프트웨이브(SoftWave) 참가
+    note: 의료용 스마트미러 서비스 소개 및 시연
+    period:
+  - title: 부산직업교육박람회 참가
+    note: 프로젝트 소개 및 시연
+    period:
+  - title: AI SW 대전 참가
+    note: Daux 로봇 프로젝트
+    period:
+  - title: SW 중등해커톤
+    note: YOLO 차량 인식을 지하차도 침수 경보 시스템으로 확장
+    period: 2023.08
 
 # awards: title(대회), prize(상), org(주최), date(연월, 없으면 생략)
 # certifications: title(자격증), org(발급 기관), date(취득 연월)
