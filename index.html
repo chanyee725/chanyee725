@@ -24,19 +24,17 @@ title: AI Robotics Researcher
   </div>
 
   <section class="home-section">
-    <h2>수상</h2>
-    <ul>
-      {% for a in p.awards %}
-      <li>{{ a.title }} <b>{{ a.prize }}</b> <span class="home-sub">{{ a.org }}</span></li>
-      {% endfor %}
-    </ul>
-  </section>
-
-  <section class="home-section">
-    <h2>자격증</h2>
-    <ul>
-      {% for c in p.certifications %}
-      <li>{{ c.title }} <span class="home-sub">{{ c.org }} · {{ c.date }}</span></li>
+    <h2>Honors &amp; Certifications</h2>
+    <ul class="cv">
+      {% for item in p.cv %}
+      <li>
+        <span class="cv-date">{{ item.date }}</span>
+        <span class="cv-body">
+          <span class="cv-title">{{ item.title }}</span>
+          {% if item.note %}<span class="cv-note">{{ item.note }}</span>{% endif %}
+        </span>
+        <span class="cv-kind">{{ item.kind }}</span>
+      </li>
       {% endfor %}
     </ul>
   </section>

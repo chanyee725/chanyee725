@@ -3,14 +3,14 @@ name: 이름
 label: Currently Exploring
 mission: VLA로 로봇이 배우는 방법을 이해하고 직접 만들어 보기
 
-# awards: title(대회), prize(상), org(주최)
-# certifications: title(자격증), org(발급 기관), date(취득 연월)
-awards:
-  - title: 대회 이름
-    prize: 상 이름
-    org: 주최 기관
-
-certifications:
-  - title: 자격증 이름
-    org: 발급 기관
-    date: YYYY.MM
+# 수상·자격증 (CV 한 줄씩, 위에서부터 보인다. 최신을 위에)
+# date: 연월(없으면 비워도 됨), title: 이름, note: 상/기관 등 옆에 작게, kind: 수상 또는 자격증
+cv:
+  - date: YYYY.MM
+    title: 자격증 이름
+    note: 발급 기관
+    kind: 자격증
+  - date:
+    title: 대회 이름 · 상 이름
+    note: 주최 기관
+    kind: 수상
