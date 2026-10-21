@@ -31,13 +31,13 @@ thumbnail-img: /assets/img/posts/gazebo-2-2-robot-core-xacro/1.png
 
 ## 단계별로 만들기
 
-- [Gazebo 2-2-1. 재료 색상 정의하기](/posts/gazebo-2-2-1-material-colors)
-- [Gazebo 2-2-2. base_link & joint 만들기](/posts/gazebo-2-2-2-base-link-joint)
-- [Gazebo 2-2-3. rviz2로 로봇 확인하기](/posts/gazebo-2-2-3-rviz2-check)
-- [Gazebo 2-2-4. 바퀴 만들기](/posts/gazebo-2-2-4-wheels)
-- [Gazebo 2-2-5. caster wheel 만들기](/posts/gazebo-2-2-5-caster-wheel)
-- [Gazebo 2-2-6. collision 추가하기](/posts/gazebo-2-2-6-collision)
-- [Gazebo 2-2-7. 관성 코드 추가 & 질량 추가](/posts/gazebo-2-2-7-inertia-mass)
+- [Gazebo 2-2-1. 재료 색상 정의하기]({% post_url 2024-03-11-gazebo-2-2-1-material-colors %})
+- [Gazebo 2-2-2. base_link & joint 만들기]({% post_url 2024-03-11-gazebo-2-2-2-base-link-joint %})
+- [Gazebo 2-2-3. rviz2로 로봇 확인하기]({% post_url 2024-03-11-gazebo-2-2-3-rviz2-check %})
+- [Gazebo 2-2-4. 바퀴 만들기]({% post_url 2024-03-11-gazebo-2-2-4-wheels %})
+- [Gazebo 2-2-5. caster wheel 만들기]({% post_url 2024-03-11-gazebo-2-2-5-caster-wheel %})
+- [Gazebo 2-2-6. collision 추가하기]({% post_url 2024-03-11-gazebo-2-2-6-collision %})
+- [Gazebo 2-2-7. 관성 코드 추가 & 질량 추가]({% post_url 2024-03-11-gazebo-2-2-7-inertia-mass %})
 
 ## 전체 코드
 

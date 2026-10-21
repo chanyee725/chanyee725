@@ -40,4 +40,4 @@ ros2 launch bssm_daux rsp.launch.py
 </robot>
 ```
 
-다음 글: [Gazebo 2-2. robot_core.xacro 만들기](/posts/gazebo-2-2-robot-core-xacro)
+다음 글: [Gazebo 2-2. robot_core.xacro 만들기]({% post_url 2024-03-12-gazebo-2-2-robot-core-xacro %})

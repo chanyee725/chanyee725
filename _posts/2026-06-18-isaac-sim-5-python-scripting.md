@@ -20,7 +20,7 @@ tags: ["isaac-sim", "python", "usd"]
 
 ## Concepts
 
-- [Core API Overview](/posts/isaac-sim-5-1-core-api-overview)
+- [Core API Overview]({% post_url 2026-06-18-isaac-sim-5-1-core-api-overview %})
 
 ## Scripts
 

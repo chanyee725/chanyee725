@@ -27,5 +27,5 @@ source ~/Desktop/<workspace>/install/setup.bash
 
 ## 이어지는 글
 
-- [Gazebo 2-1. xacro 파일 잘 되는지 확인하기](/posts/gazebo-2-1-xacro-check)
-- [Gazebo 2-2. robot_core.xacro 만들기](/posts/gazebo-2-2-robot-core-xacro)
+- [Gazebo 2-1. xacro 파일 잘 되는지 확인하기]({% post_url 2024-03-12-gazebo-2-1-xacro-check %})
+- [Gazebo 2-2. robot_core.xacro 만들기]({% post_url 2024-03-12-gazebo-2-2-robot-core-xacro %})
