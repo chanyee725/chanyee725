@@ -154,9 +154,23 @@ h4 {
   padding: 0;
   list-style: none;
 }
-.home-section li::before {
+/* 한 줄 = 왼쪽 내용 + 오른쪽 끝 기간·기관. 글자가 620px 양끝까지 차서 가운데 축과 맞는다 */
+.home-section li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1.5rem;
+}
+.row-main::before {
   content: "- ";
   color: #888;
+}
+.row-side {
+  flex-shrink: 0;
+  font-size: 0.88em;
+  font-variant-numeric: tabular-nums;
+  color: #888;
+  text-align: right;
 }
 .home-section li {
   margin: 0.15rem 0;
@@ -269,6 +283,14 @@ ul.pagination.blog-pager {
 }
 
 @media (max-width: 640px) {
+  .home-section li {
+    flex-direction: column;
+    gap: 0;
+  }
+  .row-side {
+    padding-left: 0.75em;
+    text-align: left;
+  }
   .home-name {
     font-size: 30px;
   }

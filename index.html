@@ -28,7 +28,7 @@ title: AI Robotics Researcher
     <h2>학력</h2>
     <ul>
       {% for e in p.education %}
-      <li>{{ e.title }}{% if e.note %} <span class="home-at">{{ e.note }}</span>{% endif %} <span class="home-sub">{{ e.period }}</span></li>
+      <li><span class="row-main">{{ e.title }}{% if e.note %} <span class="home-at">{{ e.note }}</span>{% endif %}</span><span class="row-side">{{ e.period }}</span></li>
       {% endfor %}
     </ul>
   </section>
@@ -37,7 +37,7 @@ title: AI Robotics Researcher
     <h2>경력</h2>
     <ul>
       {% for c in p.career %}
-      <li>{{ c.role }}{% if c.org %} <span class="home-at">at {{ c.org }}</span>{% endif %} <span class="home-sub">{{ c.period }}</span></li>
+      <li><span class="row-main">{{ c.role }}{% if c.org %} <span class="home-at">at {{ c.org }}</span>{% endif %}</span><span class="row-side">{{ c.period }}</span></li>
       {% endfor %}
     </ul>
   </section>
@@ -46,7 +46,7 @@ title: AI Robotics Researcher
     <h2>수상</h2>
     <ul>
       {% for a in p.awards %}
-      <li>{{ a.title }} <b>{{ a.prize }}</b>{% if a.org %} <span class="home-sub">at {{ a.org }}</span>{% endif %}</li>
+      <li><span class="row-main">{{ a.title }} <b>{{ a.prize }}</b></span>{% if a.org %}<span class="row-side">at {{ a.org }}</span>{% endif %}</li>
       {% endfor %}
     </ul>
   </section>
