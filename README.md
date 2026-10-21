@@ -11,9 +11,10 @@
 ## 로컬 미리보기
 
 ```bash
-bundle install
-bundle exec jekyll serve --livereload --config _config.yml,_config.dev.yml   # http://localhost:4000/
+./scripts/serve.sh   # http://localhost:4000/  (끄기: Ctrl+C)
 ```
+
+`_config.yml`을 고쳤을 때만 껐다가 다시 실행한다.
 
 ## 손댄 곳
 
