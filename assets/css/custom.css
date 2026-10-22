@@ -1145,3 +1145,15 @@ footer .fa-stack .fa-circle {
     white-space: normal;
   }
 }
+
+/* 글 본문에서 사진 여러 장을 가로 한 줄로: <div class="img-row"> 안에 <img>를 나란히 둔다 */
+.blog-post .img-row {
+  display: flex;
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+.blog-post .img-row img {
+  flex: 1 1 0;
+  min-width: 0;
+  margin: 0;
+}

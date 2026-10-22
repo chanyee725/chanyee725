@@ -375,7 +375,7 @@ html[data-theme="dark"] .highlight .err { color: #ffb4b4; background-color: tran
   place-items: center;
   width: 2.1rem;
   height: 2.1rem;
-  margin-left: 0.5rem;
+  margin-left: 1.25rem; /* 눌렀을 때 생기는 원 테두리가 옆 메뉴 글자에 붙지 않도록 */
   padding: 0;
   border: 1px solid transparent;
   border-radius: 999px;

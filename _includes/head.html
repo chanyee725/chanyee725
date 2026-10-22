@@ -75,7 +75,9 @@
 
   {% if site.site-css %}
     {% for css in site.site-css %}
-      <link rel="stylesheet" href="{{ css | relative_url }}">
+      {%- comment -%} 사이트 안 CSS는 빌드 시각을 붙여, 고친 뒤 브라우저가 옛 파일을 캐시해 쓰지 않게 한다 {%- endcomment -%}
+      {%- assign css_first = css | slice: 0 -%}
+      <link rel="stylesheet" href="{{ css | relative_url }}{% if css_first == '/' %}?v={{ site.time | date: '%s' }}{% endif %}">
     {% endfor %}
   {% endif %}
 
