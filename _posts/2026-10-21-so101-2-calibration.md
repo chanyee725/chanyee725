@@ -145,3 +145,4 @@ Calibration 결과는 `~/.cache/huggingface/lerobot/calibration/` 아래에 JSON
 ## 다음
 
 - [SO-101 3. Teleoperation]({% post_url 2026-10-21-so101-3-teleoperation %})
+- [SO-101 4. Sim 환경 구성 준비]({% post_url 2026-10-22-so101-4-sim-setup %})

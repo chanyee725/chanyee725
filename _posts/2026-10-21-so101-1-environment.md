@@ -23,3 +23,4 @@ thumbnail-img: /assets/img/posts/so101-1-environment/1.jpg
 
 - [SO-101 2. Calibration]({% post_url 2026-10-21-so101-2-calibration %})
 - [SO-101 3. Teleoperation]({% post_url 2026-10-21-so101-3-teleoperation %})
+- [SO-101 4. Sim 환경 구성 준비]({% post_url 2026-10-22-so101-4-sim-setup %})
